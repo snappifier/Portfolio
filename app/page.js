@@ -1,10 +1,7 @@
-import Image from "next/image";
-import Scroll from "@/app/scrollAnimation/Scroll";
-import ScrollAnimation from "@/app/scrollAnimation/scrollAnimation";
+import ScrollAnimation from "@/app/scrollAnimation/ScrollAnimation";
 
 export default function Home() {
   return (<>
-		<Scroll />
 		  <ScrollAnimation />
     <div className="w-full h-2000 flex flex-col justify-around items-center">
 	    <div className="w-1/2 h-100 bg-red-500"></div>
