@@ -20,8 +20,8 @@ export default function ScrollAnimation() {
 		animate(window.scrollY, targetY, {
 			type: "spring",
 			damping: 20,
-			stiffness: 40,
-			mass: 0.5,
+			stiffness: 60,
+			mass: 1,
 
 			onUpdate: latest => {
 				window.scrollTo(0, latest)
