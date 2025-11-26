@@ -57,7 +57,7 @@ export default function ScrollAnimation() {
 		<div
 			ref={ref}
 			onClick={handleClick}
-			className="fixed top-0 left-0 w-screen h-2 cursor-pointer backdrop-blur-sm backdrop-brightness-75 z-999"
+			className="fixed top-0 left-0 w-screen h-2 cursor-pointer backdrop-blur-sm backdrop-brightness-75 z-900"
 		>
 			<motion.div
 				className="h-full overflow-hidden"
