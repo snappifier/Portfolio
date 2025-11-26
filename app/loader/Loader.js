@@ -4,9 +4,26 @@ import {motion, AnimatePresence} from "motion/react"
 import {Typewriter} from "motion-plus/react";
 import {useEffect, useState} from "react"
 
-export default function Loader() {
-	const [showLoader, setShowLoader] = useState(true);
-	const [isVisible, setIsVisible] = useState(true);
+export default function Loader({onLoadingComplete}) {
+	const [showLoader, setShowLoader] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
+	const [checking, setChecking] = useState(true);
+
+	useEffect(() => {
+		const hasVisited = sessionStorage.getItem("hasVisited");
+
+		if (!hasVisited) {
+			setShowLoader(true)
+			setIsVisible(true)
+			sessionStorage.setItem("hasVisited", "true");
+
+		} else {
+			setShowLoader(false)
+			setIsVisible(false)
+			if (onLoadingComplete) onLoadingComplete();
+		}
+		setChecking(false)
+	}, [])
 
 	useEffect(() => {
 		if (showLoader) {
@@ -16,7 +33,7 @@ export default function Loader() {
 			document.body.style.overflow = "auto"
 			document.documentElement.style.overflow = "auto"
 		}
-	})
+	}, [showLoader])
 
 
 	const variants = {
@@ -31,9 +48,11 @@ export default function Loader() {
 
 	const blocks = [...Array(10)]
 
+	if (checking) return null
+
 	return (
 			<AnimatePresence>
-				{showLoader && (
+				{showLoader &&  (
 					<motion.div key="container" className="fixed top-0 left-0 w-full h-dvh flex items-start justify-center z-999"
 					            variants={variants}
 					            initial="initial"
@@ -41,13 +60,16 @@ export default function Loader() {
 					            exit="exit"
 					>
 						<motion.div className="absolute w-full h-full flex items-center justify-center text-white text-5xl"
-
 						            animate={{opacity: isVisible ? 1 : 0}}
 						            transition={{duration: 0.5, ease: "easeOut"}}
-						            onAnimationComplete={() => {if (!isVisible) setShowLoader(false)}}
+						            onAnimationComplete={() => {if (!isVisible) {
+							            setShowLoader(false)
+							            if (onLoadingComplete) onLoadingComplete();
+						            }}}
 
 						>
 							<Typewriter
+								speed={100}
 							onComplete={() => {
 								setTimeout(() => setIsVisible(false), 1500)
 							}}
