@@ -5,7 +5,7 @@ import {motion} from "motion/react"
 export default function Main({startAnimation}) {
 
 	return (<>
-			<div className="w-full h-dvh flex items-center justify-center bg-zinc-950">
+			<div className="w-full h-svh flex items-center justify-center bg-zinc-950">
 				<motion.div className="w-full h-full flex flex-col items-center justify-center"
 				            initial={{opacity: 0}}
 				            animate={{opacity: startAnimation ? 1 : 0}}
