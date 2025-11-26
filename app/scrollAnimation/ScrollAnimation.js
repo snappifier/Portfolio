@@ -23,7 +23,6 @@ export default function ScrollAnimation() {
 	return () => {
 		window.removeEventListener("wheel", stopAnimation)
 		window.removeEventListener("touchstart", stopAnimation)
-		// Czyścimy animację przy odmontowaniu komponentu
 		if (animationRef.current) animationRef.current.stop()
 	}
 }, [])
@@ -64,7 +63,7 @@ export default function ScrollAnimation() {
 				className="h-full overflow-hidden"
 				style={{width}}
 			>
-				<div className="h-full w-screen bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-500" />
+				<div className="h-full w-screen bg-linear-to-r from-blue-500 via-sky-500 to-cyan-300" />
 			</motion.div>
 		</div>
 	)
