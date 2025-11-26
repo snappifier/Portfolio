@@ -17,7 +17,7 @@ export default function Main({startAnimation}) {
 					>
 						<div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)]  "/>
 						<div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)] scale-x-[-1]"/>
-						<div className="absolute w-full h-screen bg-linear-to-b from-zinc-950 from-0% via-transparent via-70% to-zinc-950 to-100% z-200 top-0 backdrop-saturate-150"/>
+						<div className="absolute w-full h-full bg-linear-to-b from-zinc-950 from-0% via-transparent via-70% to-zinc-950 to-100% z-200 top-0 backdrop-saturate-150"/>
 					</motion.div>
 				</motion.div>
 				<motion.div className="absolute bottom-15 w-max h-max flex items-center justify-center text-slate-400 "
