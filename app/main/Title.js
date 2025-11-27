@@ -24,7 +24,7 @@ export default function Title({startAnimation}) {
 			            animate={startAnimation ? "visible" : "hidden"}
 			>
 				<motion.div variants={itemVariants}>
-					<h2 className="text-base text-blue-200/70 tracking-[0.4em] font-medium mb-6">FRONTEND DEVELOPER</h2>
+					<h2 className="text-lg text-blue-200/70 tracking-[0.4em] font-medium mb-6">FRONTEND DEVELOPER</h2>
 				</motion.div>
 				<motion.div variants={itemVariants}>
 					<h1 className="text-8xl font-bold mb-2 tracking-tight drop-shadow-2xl">KRYSTIAN MATWIEJ</h1>
@@ -35,10 +35,11 @@ export default function Title({startAnimation}) {
 						<span className="text-white font-medium"> speed of Next.js </span>
 						with the
 						<span className="text-white font-medium"> fluidity of Motion</span>.</p>
-				</motion.div>
 
-				<motion.div variants={itemVariants} className="flex items-center justify-center gap-4  rounded-full mt-12">
+
+				<div  className="flex items-center justify-center gap-4  rounded-full mt-5">
 					<Button text="View my work" bgColor="bg-[#1a1a1a]" glowColor="from-cyan-200 to-blue-300" underGlowColor="bg-[#1a1a1a]/40" textColor="text-white"/>
+				</div>
 				</motion.div>
 			</motion.div>
 		</div>
