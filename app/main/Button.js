@@ -26,12 +26,12 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 
 			const startTimer = setTimeout(() => {
 				x.set(rect.width + 200);
-			}, 500);
+			}, 1500);
 
 			const endTimer = setTimeout(() => {
 				setIsIntro(false);
 				x.set(rect.width / 2);
-			}, 3000);
+			}, 4000);
 
 			return () => {
 				clearTimeout(startTimer);
