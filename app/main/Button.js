@@ -3,7 +3,7 @@
 import {motion, useMotionValue, useSpring} from "motion/react";
 import {useRef, useEffect, useState} from "react";
 
-export default function Button() {
+export default function Button({text ,bgColor, glowColor, underGlowColor, textColor }) {
 	const containerRef = useRef(null);
 	const buttonRef = useRef(null);
 	const timeoutRef = useRef(null);
@@ -67,14 +67,14 @@ export default function Button() {
 		  onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}>
 			<div ref={buttonRef} className="relative rounded-full overflow-hidden">
-				<div className="absolute inset-0 bg-gray-800">
-					<motion.div className="absolute w-32 h-32 bg-gradient-to-r from-cyan-200 to-blue-300 blur-[20px] rounded-full"
+				<div className={`absolute inset-0 `}>
+					<motion.div className={`absolute w-32 h-32 bg-gradient-to-r ${glowColor} blur-[20px] rounded-full`}
 					            style={{x: springX, y: springY, translateX: "-50%", translateY: "-50%"}}
 					            animate={{opacity: (isIntro || isHovered) ? 1 : 0}}
 					            transition={{opacity: {duration: 0.3}}}/>
 				</div>
-				<div className="relative flex items-center justify-center px-12 py-3 m-[2px] rounded-full bg-[#1a1a1a] z-10 transition colors duration-300 cursor-pointer">
-					<span className="text-gray-200 font-medium tracking-wide text-sm select-none">View my work</span>
+				<div className={`relative ${bgColor} flex items-center justify-center px-12 py-3 m-[2px] rounded-full  z-10 transition colors duration-300 cursor-pointer`}>
+					<span className={`${textColor} font-medium tracking-wide text-sm select-none`}>{text}</span>
 				</div>
 
 			</div>
