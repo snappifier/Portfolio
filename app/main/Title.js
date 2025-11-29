@@ -3,7 +3,6 @@
 import {motion} from "motion/react";
 import Button from "@/app/main/Button";
 
-
 export default function Title({startAnimation}) {
 
 	const containerVariants = {

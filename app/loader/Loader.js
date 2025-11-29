@@ -71,7 +71,7 @@ export default function Loader({onLoadingComplete}) {
 							<Typewriter
 								speed={100}
 							onComplete={() => {
-								setTimeout(() => setIsVisible(false), 1500)
+								setTimeout(() => setIsVisible(false), 800)
 							}}
 							>Welcome to my portfolio.</Typewriter>
 
