@@ -1,8 +1,15 @@
 'use client'
 
-import {motion} from "motion/react";
+import {motion, useScroll, useMotionValueEvent} from "motion/react";
+import {useState} from "react";
 
 export default function Glow({startAnimation}) {
+
+	const { scrollY } = useScroll();
+	const [scrolled, setScrolled] = useState(false);
+
+	useMotionValueEvent(scrollY, "change", (value) => {if (value > 50 && !scrolled) setScrolled(true)})
+
 	return (<>
 		<motion.div className="w-full h-full flex flex-col items-center justify-center"
 		            initial={{opacity: 0}}
@@ -24,7 +31,7 @@ export default function Glow({startAnimation}) {
 	>
 		<motion.div className="w-max h-max flex flex-col items-center justify-center select-none"
 		            initial={{opacity: 0}}
-		            animate={{opacity: startAnimation ? 1 : 0}}
+		            animate={{opacity: (startAnimation && !scrolled) ? 1 : 0}}
 		            transition={{duration: 1, ease: "easeInOut", delay: 2}}
 		>
 			<p>Discover more</p>
