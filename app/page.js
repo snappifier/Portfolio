@@ -7,7 +7,7 @@ export default function Home() {
   return (<>
 		  <ScrollAnimation />
 		  <AnimationWrapper />
-          <Projects />
+		  <Projects />
       <div className="w-full h-2000 flex flex-col justify-around items-center bg-zinc-950">
 	    <div className="w-1/2 h-100 bg-red-500"></div>
 	    <div className="w-1/2 h-100 bg-green-500"></div>
