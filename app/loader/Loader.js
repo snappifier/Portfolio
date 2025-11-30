@@ -59,7 +59,7 @@ export default function Loader({onLoadingComplete}) {
 					            animate="show"
 					            exit="exit"
 					>
-						<motion.div className="absolute w-full h-full flex items-center justify-center text-white text-5xl px-20 text-center"
+						<motion.div className="absolute w-full h-full flex items-center justify-center text-white text-5xl px-20 text-center select-none"
 						            animate={{opacity: isVisible ? 1 : 0}}
 						            transition={{duration: 0.5, ease: "easeOut"}}
 						            onAnimationComplete={() => {if (!isVisible) {
