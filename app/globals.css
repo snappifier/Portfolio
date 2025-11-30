@@ -7,3 +7,13 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+html[data-lenis],
+html,
+body {
+    overflow: visible !important;
+}
+
+[data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
