@@ -25,20 +25,24 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 				if (!isUserInteractingRef.current) {
 					introAnimationRef.current = animate(x, rect.width + 200, {
 						duration: 5,
-						ease: "easeInOut"
+						ease: "easeInOut",
+						onComplete: () => {
+							if (!isUserInteractingRef.current) {
+								setIsIntro(false);
+
+								setTimeout(() => {
+									if (!isUserInteractingRef.current) {
+										x.set(rect.width / 2);
+									}
+								}, 350);
+							}
+						}
 					});
 				}
 			}, 1000);
 
-			const endTimer = setTimeout(() => {
-				if (!isUserInteractingRef.current) {
-					setIsIntro(false);
-				}
-			}, 7000);
-
 			return () => {
 				clearTimeout(startTimer);
-				clearTimeout(endTimer);
 				if (introAnimationRef.current) {
 					introAnimationRef.current.stop();
 				}
@@ -49,7 +53,6 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 	const handleMouseMove = (e) => {
 		if (!buttonRef.current || !containerRef.current) return;
 
-		// Stop intro animation and mark user is interacting
 		if (!isUserInteractingRef.current) {
 			isUserInteractingRef.current = true;
 			if (introAnimationRef.current) {
@@ -66,7 +69,6 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 		const mouseX = e.clientX - rect.left;
 		const mouseY = e.clientY - rect.top;
 
-		// Fast spring animation for mouse tracking
 		animate(x, mouseX, {
 			type: "spring",
 			damping: 25,
