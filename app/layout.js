@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./SmoothScroll";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       <SmoothScroll>
         {children}
 	      <Analytics />
+	      <SpeedInsights />
       </SmoothScroll>
       </body>
     </html>
