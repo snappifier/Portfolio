@@ -1,15 +1,16 @@
 'use client'
 import {motion} from "motion/react";
+import {forwardRef} from "react";
 
-export default function Cards({project, setAsActive}) {
+const Cards = forwardRef(function Cards({project}, ref) {
 
 	return (
 		<motion.div className="flex flex-col items-center justify-center gap-5"
-								onViewportEnter={setAsActive}
-		            viewport={{amount: 0.5, margin: "0px 0px 20% 0px"}}
+								ref={ref}
 		>
 			<div className={`${project.color} size-200`}></div>
 
 		</motion.div>
 	)
-}
+})
+export default Cards
