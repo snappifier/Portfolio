@@ -1,26 +1,40 @@
+export const badges = {
+	next: {name: "Next.js", icon: "/next.svg"},
+	tailwind: {name: "TailwindCSS", icon: "/tailwind_logo.svg"},
+	react: {name: "React", icon: "/react_logo.svg"},
+}
+
 export const projects = [
 	{
 		id: 1,
-		title: "Lo Zamosc",
+		title: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		features: [
-			"Simplified idea submission",
-			"Enhanced browsing"
-		],
-		tags: ["Next.js", "React", "TailwindCSS"],
+		tags: [badges.next, badges.tailwind, badges.react,],
 		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-		color: "from-blue-500 to-cyan-500",
+		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
+		buttonColor: "bg-gradient-to-r from-blue-500/60 to-cyan-500/60",
 		linkLive: "#",
 		linkRepo: "#"
 	},
 	{
 		id: 2,
-		title: "Second Project",
-		description: "Another cool project description here to test the scroll functionality.",
-		features: ["Feature A", "Feature B"],
-		tags: ["TypeScript", "Motion"],
+		title: "MY PORTFOLIO",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
+		tags: [badges.next, badges.tailwind, badges.react,],
 		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-		color: "from-purple-500 to-pink-500",
+		color: "bg-gradient-to-r from-purple-500 to-pink-500",
+		buttonColor: "bg-gradient-to-r from-purple-500/60 to-pink-500/60",
+		linkLive: "#",
+		linkRepo: "#"
+	},
+	{
+		id: 3,
+		title: "THIRD PROJECT",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
+		tags: [badges.next, badges.tailwind, badges.react,],
+		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+		color: "bg-gradient-to-r from-emerald-400 to-green-600",
+		buttonColor: "bg-gradient-to-r from-emerald-400/60 to-green-600/60",
 		linkLive: "#",
 		linkRepo: "#"
 	}

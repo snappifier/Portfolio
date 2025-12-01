@@ -55,21 +55,22 @@ export default function FeaturedProjects() {
 	return (
 		<div className="flex flex-col items-center justify-center w-full h-max">
 			<ProjectsTitle />
-			<div ref={containerRef} className="w-full h-max flex items-start justify-center gap-5">
+			<div ref={containerRef} className="w-full h-max flex items-start justify-center gap-15">
 			{/*	<div className="flex flex-col gap-30 py-30">*/}
 			{/*		{projects.map((project, index) => (*/}
 			{/*			<Cards key={project.id} project={project} setAsActive={() => setActiveProject(index)} />*/}
 			{/*		))}*/}
 			{/*</div>*/}
+
 				<div className="flex flex-col gap-30 py-30">
-					{testData.map((project, index) => (
+					{projects.map((project, index) => (
 						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} />
 					))}
 
-			</div>
-				<Info project={testData[activeProject]}/>
+				</div>
+				<Info project={projects[activeProject]}/>
 
-		</div>
+			</div>
 		</div>
 	)
 }
