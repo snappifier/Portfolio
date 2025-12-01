@@ -19,7 +19,7 @@ export default function ProjectsTitle() {
 								variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"
-		            viewport={{ once: true, margin: "-100px" }}
+		            viewport={{ once: true, margin: "-300px" }}
 		>
 			<motion.h3 variants={itemVariants} className="text-sm text-blue-200/70 tracking-[0.4em] font-medium mb-2">PORTFOLIO</motion.h3>
 			<motion.h2 variants={itemVariants} className="text-6xl font-bold text-white mb-3 tracking-tight drop-shadow-2xl">Featured Projects</motion.h2>

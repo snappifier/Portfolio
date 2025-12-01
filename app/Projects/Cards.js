@@ -1,13 +1,15 @@
+'use client'
+import {motion} from "motion/react";
 
+export default function Cards({project, setAsActive}) {
 
-export default function Cards() {
+	return (
+		<motion.div className="flex flex-col items-center justify-center gap-5"
+								onViewportEnter={setAsActive}
+		            viewport={{amount: 0.5, margin: "0px 0px 20% 0px"}}
+		>
+			<div className={`${project.color} size-200`}></div>
 
-	return(
-		<div className="w-full h-max flex flex-col items-center justify-center mx-20">
-			<div className="border border-red-500 w-full h-200 my-20"></div>
-			<div className="border border-red-500 w-full h-200 my-20"></div>
-			<div className="border border-red-500 w-full h-200 my-20"></div>
-			<div className="border border-red-500 w-full h-200 my-20"></div>
-		</div>
+		</motion.div>
 	)
 }
