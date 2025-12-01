@@ -2,35 +2,17 @@
 
 import {motion, useScroll, animate, useTransform } from "motion/react"
 import {useEffect, useRef} from "react"
+import {useLenis} from "lenis/react";
 
 export default function ScrollAnimation() {
 	const { scrollYProgress } = useScroll()
 	const ref = useRef(null)
-	const animationRef = useRef(null)
 	const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-
-	useEffect(() => {
-	const stopAnimation = () => {
-		if (animationRef.current) {
-			animationRef.current.stop()
-			animationRef.current = null
-		}
-	}
-
-	window.addEventListener("wheel", stopAnimation)
-	window.addEventListener("touchstart", stopAnimation)
-
-	return () => {
-		window.removeEventListener("wheel", stopAnimation)
-		window.removeEventListener("touchstart", stopAnimation)
-		if (animationRef.current) animationRef.current.stop()
-	}
-}, [])
+	const lenis = useLenis()
 
 	const handleClick = (e) => {
 		const progress = ref.current
 		if (!progress) return
-		if (animationRef.current) animationRef.current.stop()
 
 		const {width: rectWidth, left} = progress.getBoundingClientRect()
 		const clickX = e.clientX - left
@@ -38,19 +20,7 @@ export default function ScrollAnimation() {
 		const totalScrollableHeight = document.documentElement.scrollHeight - window.innerHeight
 		const targetY = totalScrollableHeight * ratio
 
-		animationRef.current = animate(window.scrollY, targetY, {
-			type: "spring",
-			damping: 20,
-			stiffness: 60,
-			mass: 1,
-
-			onUpdate: latest => {
-				window.scrollTo(0, latest)
-			},
-			onComplete: () => {
-				animationRef.current = null
-			}
-		})
+		lenis.scrollTo(targetY, {duration: 1.5, easing: (t) => 1 - Math.pow(1 - t, 3)})
 	}
 
 	return (
