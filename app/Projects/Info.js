@@ -14,7 +14,6 @@ export default function Info({project}) {
 				            key={project.id}>
 
 					<AnimateText as="h2" className="text-6xl font-bold text-white tracking-tight  w-full" >{project.title}</AnimateText>
-					{/*<motion.h2 className="text-6xl font-bold text-white tracking-tight leading-tight w-full">{project.title}</motion.h2>*/}
 					<AnimateText as="p" className="text-lg text-zinc-400 leading-relaxed w-full"
 					             duration={1}
 					             bounce={0.5}
@@ -22,14 +21,6 @@ export default function Info({project}) {
 					             staggerD={0.1}
 					             delay={0.2}
 					>{project.description}</AnimateText>
-					{/*<div className="flex flex-wrap gap-2 mt-5">*/}
-					{/*	{project.tags.map((tag) => (*/}
-					{/*		<div key={tag.name} className="flex items-center gap-2 px-3 py-2  rounded-sm bg-zinc-900 text-white text-sm select-none pointer-events-none">*/}
-					{/*			<img src={tag.icon} alt={tag.name} className="w-4 h-4"/>*/}
-					{/*			{tag.name}*/}
-					{/*		</div>*/}
-					{/*	))}*/}
-					{/*</div>*/}
 					<AnimateStagger tags={project.tags} baseDelay={0.5} staggerFactor={0.001}/>
 					<motion.div className={`w-full h-px my-10 ${project.color}`}
 											initial={{scaleX: 0, opacity: 0}}
@@ -38,9 +29,9 @@ export default function Info({project}) {
 											transition={{duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1]}}
 					/>
 					<motion.div className="flex items-center justify-around gap-5 ml-3"
-											initial={{opacity: 0, y: 20}}
+											initial={{opacity: 0, y: 10}}
 					            animate={{opacity: 1, y: 0}}
-					            transition={{duration: 0.5, delay: 1.1, ease: "easeOut"}}
+					            transition={{duration: 0.7, delay: 1.3, ease: "easeOut"}}
 					>
 
 						<div className={`flex items-center justify-center cursor-pointer select-none`}>
