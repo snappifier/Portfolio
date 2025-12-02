@@ -11,6 +11,11 @@ export const badges = {
 	postgres: {name: "Postgresql", icon: "/postgresql_logo.png"},
 	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
 }
+const projectImages = {
+	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1536, height: 4041},
+	portfolio: {alt: "Portfolio"},
+	third: {alt: "Third project"}
+}
 
 export const projects = [
 	{
@@ -18,9 +23,9 @@ export const projects = [
 		title: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
 		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
-		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+		image: projectImages.highschool,
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
-		buttonColor: "bg-gradient-to-r from-blue-500/60 to-cyan-500/60",
+		navbarText: "1lo.com.pl",
 		linkLive: "#",
 		linkRepo: "#"
 	},
@@ -28,10 +33,10 @@ export const projects = [
 		id: 2,
 		title: "MY PORTFOLIO",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react,],
-		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
+		image: projectImages.portfolio,
 		color: "bg-gradient-to-r from-purple-500 to-pink-500",
-		buttonColor: "bg-gradient-to-r from-purple-500/60 to-pink-500/60",
+		navbarText: "krystianmatwiej.vercel.app",
 		linkLive: "#",
 		linkRepo: "#"
 	},
@@ -39,10 +44,10 @@ export const projects = [
 		id: 3,
 		title: "THIRD PROJECT",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react,],
-		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
+		image: projectImages.third,
 		color: "bg-gradient-to-r from-emerald-400 to-green-600",
-		buttonColor: "bg-gradient-to-r from-emerald-400/60 to-green-600/60",
+		navbarText: "thirdproject.com",
 		linkLive: "#",
 		linkRepo: "#"
 	}

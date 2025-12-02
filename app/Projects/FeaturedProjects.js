@@ -1,6 +1,7 @@
 'use client'
 
 import {useState, useRef, useEffect, useCallback} from "react";
+import {motion} from "motion/react";
 import Cards from "./Cards";
 import Info from "./Info";
 import {projects, testData} from "./data"
@@ -9,7 +10,7 @@ import ProjectsTitle from "@/app/Projects/ProjectsTitle";
 export default function FeaturedProjects() {
 
 	const [activeProject, setActiveProject] = useState(0)
-	const [isInfoVisible, setIsInfoVisible] = useState(false)
+	const [isVisible, setIsVisible] = useState(false)
 	const cardsRef = useRef([])
 	const containerRef = useRef(null)
 
@@ -58,7 +59,7 @@ export default function FeaturedProjects() {
 
 		const observer = new IntersectionObserver(([entry]) => {
 			if (entry.isIntersecting) {
-				setIsInfoVisible(true)
+				setIsVisible(true)
 				observer.disconnect()
 			}
 		},{rootMargin: '-400px'})
@@ -71,13 +72,18 @@ export default function FeaturedProjects() {
 			<ProjectsTitle />
 			<div ref={containerRef} className="w-full h-max flex items-start justify-center ">
 
-				<div className="flex flex-col items-end gap-30 py-30 w-1/2">
+				<motion.div className="flex flex-col items-end gap-50 py-30 w-1/2"
+				            initial={{opacity: 0, y: 20}}
+				            whileInView={{opacity: 1, y: 0}}
+				            viewport={{ once: true, margin: "-400px" }}
+				            transition={{duration: 0.5, ease: "easeOut"}}
+				>
 					{projects.map((project, index) => (
-						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} />
+						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} isVisible={isVisible} />
 					))}
 
-				</div>
-				<Info project={projects[activeProject]} isVisible={isInfoVisible}/>
+				</motion.div>
+				<Info project={projects[activeProject]} isVisible={isVisible}/>
 
 			</div>
 		</div>
