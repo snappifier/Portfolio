@@ -9,6 +9,7 @@ import ProjectsTitle from "@/app/Projects/ProjectsTitle";
 export default function FeaturedProjects() {
 
 	const [activeProject, setActiveProject] = useState(0)
+	const [isInfoVisible, setIsInfoVisible] = useState(false)
 	const cardsRef = useRef([])
 	const containerRef = useRef(null)
 
@@ -52,6 +53,19 @@ export default function FeaturedProjects() {
 		return () => window.removeEventListener('scroll', handleScroll)
 	},[updateActiveProject])
 
+	useEffect(() => {
+		if (!containerRef.current) return
+
+		const observer = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting) {
+				setIsInfoVisible(true)
+				observer.disconnect()
+			}
+		},{rootMargin: '-400px'})
+		observer.observe(containerRef.current)
+		return () => observer.disconnect()
+	},[])
+
 	return (
 		<div className="flex flex-col items-center justify-center w-full h-max">
 			<ProjectsTitle />
@@ -63,7 +77,7 @@ export default function FeaturedProjects() {
 					))}
 
 				</div>
-				<Info project={projects[activeProject]}/>
+				<Info project={projects[activeProject]} isVisible={isInfoVisible}/>
 
 			</div>
 		</div>

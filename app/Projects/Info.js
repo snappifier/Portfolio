@@ -4,14 +4,18 @@ import {motion, AnimatePresence} from "motion/react";
 import AnimateText from "./AnimateText"
 import AnimateStagger from "@/app/Projects/AnimateStagger";
 
-export default function Info({project}) {
+export default function Info({project, isVisible}) {
 	if (!project) return null;
 
 	return (
-		<div className="sticky top-1/4 mb-80 mt-30 h-max w-1/2 flex items-center justify-center">
-			<AnimatePresence mode="wait">
+		<div className="sticky top-1/4 mb-40 mt-30 h-max w-1/2 flex items-center justify-center">
+				{isVisible && (
 				<motion.div className="flex flex-col items-start justify-center max-w-2xl"
-				            key={project.id}>
+				            key={project.id}
+										initial={{opacity: 0}}
+				            animate={{opacity: 1}}
+				            transition={{duration: 0.3}}
+				>
 
 					<AnimateText as="h2" className="text-6xl font-bold text-white tracking-tight  w-full" >{project.title}</AnimateText>
 					<AnimateText as="p" className="text-lg text-zinc-400 leading-relaxed w-full"
@@ -43,7 +47,7 @@ export default function Info({project}) {
 						</div>
 					</motion.div>
 				</motion.div>
-			</AnimatePresence>
+					)}
 		</div>
 	)
 }
