@@ -15,15 +15,15 @@ export default function ProjectsTitle() {
 	}
 
 	return (
-		<motion.div className="flex flex-col items-center justify-center w-max h-max text-center py-40"
+		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 py-20 sm:py-30 lg:py-40"
 								variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"
-		            viewport={{ once: true, margin: "-300px" }}
+		            viewport={{ once: true, margin: "-200px" }}
 		>
-			<motion.h3 variants={itemVariants} className="text-sm text-blue-200/70 tracking-[0.4em] font-medium mb-2">PORTFOLIO</motion.h3>
-			<motion.h2 variants={itemVariants} className="text-6xl font-bold text-white mb-3 tracking-tight drop-shadow-2xl">Featured Projects</motion.h2>
-			<motion.p variants={itemVariants} className="max-w-xl text-lg text-zinc-400 leading-relaxed">A curated selection of projects demonstrating my expertise in
+			<motion.h3 variants={itemVariants} className="text-xs sm:text-sm text-blue-200/70 tracking-[0.3em] sm:tracking-[0.4em] font-medium mb-2">PORTFOLIO</motion.h3>
+			<motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight drop-shadow-2xl">Featured Projects</motion.h2>
+			<motion.p variants={itemVariants} className="max-w-sm sm:max-w-md lg:max-w-xl text-sm sm:text-base lg:text-lg text-zinc-400 leading-relaxed">A curated selection of projects demonstrating my expertise in
                 <span className="text-white font-bold"> React</span> & <span className="text-white font-bold">Motion</span>.</motion.p>
 		</motion.div>
 	)
