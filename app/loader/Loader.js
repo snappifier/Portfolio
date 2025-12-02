@@ -3,11 +3,14 @@
 import {motion, AnimatePresence} from "motion/react"
 import {Typewriter} from "motion-plus/react";
 import {useEffect, useState} from "react"
+import {useLenis} from "lenis/react"
 
 export default function Loader({onLoadingComplete}) {
 	const [showLoader, setShowLoader] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
 	const [checking, setChecking] = useState(true);
+
+	const lenis = useLenis();
 
 	useEffect(() => {
 		const hasVisited = sessionStorage.getItem("hasVisited");
@@ -27,13 +30,16 @@ export default function Loader({onLoadingComplete}) {
 
 	useEffect(() => {
 		if (showLoader) {
-			document.body.style.overflow = "hidden"
-			document.documentElement.style.overflow = "hidden"
+			if (lenis) lenis.stop()
+
+			document.body.style.setProperty("overflow", "hidden", "important")
+			document.documentElement.style.setProperty("overflow", "hidden", "important")
 		} else {
-			document.body.style.overflow = "auto"
-			document.documentElement.style.overflow = "auto"
+			if (lenis) lenis.start()
+			document.body.style.removeProperty("overflow")
+			document.documentElement.style.removeProperty("overflow")
 		}
-	}, [showLoader])
+	}, [showLoader, lenis])
 
 
 	const variants = {
