@@ -1,7 +1,15 @@
 export const badges = {
-	next: {name: "Next.js", icon: "/next.svg"},
-	tailwind: {name: "TailwindCSS", icon: "/tailwind_logo.svg"},
+	next: {name: "Next,js", icon: "/nextjs_logo.svg"},
+	tailwind: {name: "Tailwind CSS", icon: "/tailwind_logo.svg"},
 	react: {name: "React", icon: "/react_logo.svg"},
+	strapi: {name: "Strapi", icon: "/strapi_logo.svg"},
+	motion: {name: "Motion.dev", icon: "/motion_logo.svg"},
+	railway: {name: "Railway", icon: "/railway_logo.svg"},
+	vercel: {name: "Vercel", icon: "/vercel_logo.svg"},
+	figma: {name: "Figma", icon: "/figma_logo.svg"},
+	vite: {name: "Vite", icon: "/vite_logo.svg"},
+	postgres: {name: "Postgresql", icon: "/postgresql_logo.png"},
+	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
 }
 
 export const projects = [
@@ -9,7 +17,7 @@ export const projects = [
 		id: 1,
 		title: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react,],
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
 		image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
 		buttonColor: "bg-gradient-to-r from-blue-500/60 to-cyan-500/60",
