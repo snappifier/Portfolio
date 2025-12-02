@@ -1,9 +1,8 @@
 'use client'
 
-import {useEffect, useRef} from "react";
-import {motion, AnimatePresence, animate, stagger} from "motion/react";
-import {splitText} from "motion-plus";
+import {motion, AnimatePresence} from "motion/react";
 import AnimateText from "./AnimateText"
+import AnimateStagger from "@/app/Projects/AnimateStagger";
 
 export default function Info({project}) {
 	if (!project) return null;
@@ -14,7 +13,7 @@ export default function Info({project}) {
 				<motion.div className="flex flex-col items-start justify-center max-w-2xl"
 				            key={project.id}>
 
-					<AnimateText as="h2" className="text-6xl font-bold text-white tracking-tight leading-tight w-full" >{project.title}</AnimateText>
+					<AnimateText as="h2" className="text-6xl font-bold text-white tracking-tight  w-full" >{project.title}</AnimateText>
 					{/*<motion.h2 className="text-6xl font-bold text-white tracking-tight leading-tight w-full">{project.title}</motion.h2>*/}
 					<AnimateText as="p" className="text-lg text-zinc-400 leading-relaxed w-full"
 					             duration={1}
@@ -23,16 +22,16 @@ export default function Info({project}) {
 					             staggerD={0.1}
 					             delay={0.2}
 					>{project.description}</AnimateText>
-					{/*<motion.p className="text-lg text-zinc-400 leading-relaxed">{project.description}</motion.p>*/}
-					<div className="flex flex-wrap gap-2 mt-5">
-						{project.tags.map((tag) => (
-							<div key={tag.name} className="flex items-center gap-2 px-3 py-2  rounded-sm bg-zinc-900 text-white text-sm select-none pointer-events-none">
-								<img src={tag.icon} alt={tag.name} className="w-4 h-4"/>
-								{tag.name}
-							</div>
-						))}
-					</div>
-					<div className={`w-full h-px my-10 ${project.color}`}></div>
+					{/*<div className="flex flex-wrap gap-2 mt-5">*/}
+					{/*	{project.tags.map((tag) => (*/}
+					{/*		<div key={tag.name} className="flex items-center gap-2 px-3 py-2  rounded-sm bg-zinc-900 text-white text-sm select-none pointer-events-none">*/}
+					{/*			<img src={tag.icon} alt={tag.name} className="w-4 h-4"/>*/}
+					{/*			{tag.name}*/}
+					{/*		</div>*/}
+					{/*	))}*/}
+					{/*</div>*/}
+					<AnimateStagger tags={project.tags} baseDelay={0.5} staggerFactor={0.001}/>
+					<div className={`w-full h-px my-10 ${project.color}`}/>
 					<div className="flex items-center justify-around gap-5 ml-3">
 
 						<div className={`flex items-center justify-center cursor-pointer select-none`}>
