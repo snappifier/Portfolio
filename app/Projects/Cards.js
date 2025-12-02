@@ -25,16 +25,9 @@ const Cards = forwardRef(function Cards({project}, ref) {
 	}
 
 	return (
-		// <motion.div className="flex flex-col items-center justify-center gap-5"
-		// 						ref={ref}
-		// >
-		// 	<div className={`${project.color} size-200`}></div>
-		//
-		// </motion.div>
-
 				<motion.div className="relative size-200 cursor-pointer"
 				            ref={ref}
-				            style={{perspective: 1000}}
+				            style={{perspective: 2000}}
 				            onMouseMove={handleMouseMove}
 				            onMouseLeave={handleMouseLeave}
 				            onMouseEnter={() => setIsHovered(true)}
@@ -43,7 +36,11 @@ const Cards = forwardRef(function Cards({project}, ref) {
 				            viewport={{once: true, margin: "-100px"}}
 				            transition={{duration: 0.8, ease: [0.25, 0.1, 0.25, 1]}}
 				>
-					<motion.div className={`absolute -inset-4 ${project.color} rounded-2xl blur-2xl`} />
+					<motion.div className={`absolute -inset-4 ${project.color} rounded-2xl blur-2xl`}
+											initial={{opacity: 0.2}}
+					            animate={{opacity: isHovered ? 0.4 : 0.2}}
+					            transition={{duration: 0.4}}
+					/>
 					<motion.div className="relative size-full rounded-xl overflow-hidden bg-zinc-900"
 					            style={{rotateX, rotateY, transformStyle: "preserve-3d" }}
 					            animate={{z: isHovered ? 20: 0, boxShadow: isHovered ? "0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1)" : "0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05)"}}
@@ -66,6 +63,7 @@ const Cards = forwardRef(function Cards({project}, ref) {
 									</span>
 								</div>
 							</div>
+							<div className="w-13.5"/>
 						</div>
 
 						<div className="relative w-full h-[calc(100%-36px)] overflow-hidden">
