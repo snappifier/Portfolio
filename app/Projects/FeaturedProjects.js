@@ -82,7 +82,7 @@ export default function FeaturedProjects() {
 				<motion.div className="flex flex-col items-center lg:items-end gap-20 sm:gap-30 md:gap-40 lg:gap-50 py-10 sm:py-20 lg:py-30 w-full lg:w-1/2"
 				            initial={{opacity: 0, y: 20}}
 				            whileInView={{opacity: 1, y: 0}}
-				            viewport={{ once: true, amount: 0.1 }}
+				            viewport={{ once: true, amount: 0.12 }}
 				            transition={{duration: 0.5, ease: "easeOut"}}
 				            onViewportEnter={() => setIsVisible(true)}
 				>
