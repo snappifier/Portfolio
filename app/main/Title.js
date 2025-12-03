@@ -2,8 +2,15 @@
 
 import {motion} from "motion/react";
 import Button from "@/app/main/Button";
+import {useLenis} from "lenis/react";
 
 export default function Title({startAnimation}) {
+
+	const lenis = useLenis()
+
+	const handleScroll = () => {
+		lenis?.scrollTo('#projects', {duration: 1.5, easing: (t) => 1 - Math.pow(1 - t, 3)})
+	}
 
 	const containerVariants = {
 		hidden: {opacity: 0},
@@ -37,7 +44,7 @@ export default function Title({startAnimation}) {
 
 
 				<div  className="flex items-center justify-center gap-4  rounded-full mt-4 sm:mt-5">
-					<Button text="View my work" bgColor="bg-[#1a1a1a]" glowColor="from-cyan-200 to-blue-300" underGlowColor="bg-[#1a1a1a]/40" textColor="text-white"/>
+					<Button text="View my work" bgColor="bg-[#1a1a1a]" glowColor="from-cyan-200 to-blue-300" underGlowColor="bg-[#1a1a1a]/40" textColor="text-white" onClick={handleScroll}/>
 				</div>
 				</motion.div>
 			</motion.div>

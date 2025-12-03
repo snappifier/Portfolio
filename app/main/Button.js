@@ -3,7 +3,7 @@
 import {motion, useMotionValue, animate} from "motion/react";
 import {useRef, useEffect, useState} from "react";
 
-export default function Button({text ,bgColor, glowColor, underGlowColor, textColor, noClick }) {
+export default function Button({text ,bgColor, glowColor, underGlowColor, textColor, onClick }) {
 	const containerRef = useRef(null);
 	const buttonRef = useRef(null);
 	const timeoutRef = useRef(null);
@@ -108,7 +108,7 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 						transition={{opacity: {duration: 0.3}}}
 					/>
 				</div>
-				<div className={`relative ${bgColor} flex items-center justify-center px-6 py-2 sm:px-8 sm:py-2.5 lg:px-12 lg:py-3 m-[2px] rounded-full z-10 transition colors duration-300 cursor-pointer`}>
+				<div className={`relative ${bgColor} flex items-center justify-center px-6 py-2 sm:px-8 sm:py-2.5 lg:px-12 lg:py-3 m-[2px] rounded-full z-10 transition colors duration-300 cursor-pointer`} onClick={onClick} style={{WebkitTapHighlightColor: "transparent"}}>
 					<span className={`${textColor} font-medium tracking-wide text-xs sm:text-sm select-none whitespace-nowrap`}>{text}</span>
 				</div>
 			</div>
