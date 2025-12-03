@@ -75,7 +75,7 @@ export default function FeaturedProjects() {
 	},[updateActiveProject, checkIfInProjects])
 
 	return (
-		<div ref={sectionRef} className="flex flex-col items-center justify-center w-full h-max px-4 sm:px-6 lg:px-8">
+		<div id="projects" ref={sectionRef} className="flex flex-col items-center justify-center w-full h-max px-4 sm:px-6 lg:px-8">
 			<ProjectsTitle />
 			<div className="relative w-full flex flex-col lg:flex-row lg:items-start lg:justify-center ">
 

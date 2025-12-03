@@ -3,7 +3,7 @@
 import {motion, useMotionValue, animate} from "motion/react";
 import {useRef, useEffect, useState} from "react";
 
-export default function Button({text ,bgColor, glowColor, underGlowColor, textColor }) {
+export default function Button({text ,bgColor, glowColor, underGlowColor, textColor, noClick }) {
 	const containerRef = useRef(null);
 	const buttonRef = useRef(null);
 	const timeoutRef = useRef(null);

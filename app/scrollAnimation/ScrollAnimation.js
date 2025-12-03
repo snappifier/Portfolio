@@ -20,7 +20,7 @@ export default function ScrollAnimation() {
 		const totalScrollableHeight = document.documentElement.scrollHeight - window.innerHeight
 		const targetY = totalScrollableHeight * ratio
 
-		lenis.scrollTo(targetY, {duration: 1.5, easing: (t) => 1 - Math.pow(1 - t, 3)})
+		lenis.scrollTo(targetY, {duration: 2.5, easing: (t) => 1 - Math.pow(1 - t, 3)})
 	}
 
 	return (

@@ -99,7 +99,7 @@ export default function Info({project, isVisible, isMobile = false}) {
 					             delay={0.2}
 					>{project.description}</AnimateText>
 					<AnimateStagger tags={project.tags} baseDelay={0.5} staggerFactor={0.001}/>
-					<motion.div className={`w-full h-px my-6 md:my-8 lg:my-10 ${project.color}`}
+					<motion.div className={`w-full h-1 my-6 md:my-8 lg:my-10 rounded-full ${project.color}`}
 											initial={{scaleX: 0, opacity: 0}}
 											animate={{scaleX: 1, opacity: 1}}
 					            style={{originX: 0}}

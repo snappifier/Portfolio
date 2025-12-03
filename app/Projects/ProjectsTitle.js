@@ -15,11 +15,11 @@ export default function ProjectsTitle() {
 	}
 
 	return (
-		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 py-20 sm:py-30 lg:py-40"
+		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 pt-20 sm:pt-30 lg:pt-40"
 								variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"
-		            viewport={{ once: true, amount: 0.6 }}
+		            viewport={{ once: true, amount: 0.9 }}
 		>
 			<motion.h3 variants={itemVariants} className="text-xs sm:text-sm text-blue-200/70 tracking-[0.3em] sm:tracking-[0.4em] font-medium mb-2">PORTFOLIO</motion.h3>
 			<motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight drop-shadow-2xl">Featured Projects</motion.h2>

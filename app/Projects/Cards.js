@@ -25,7 +25,7 @@ const Cards = forwardRef(function Cards({project}, ref) {
 	}
 
 	return (
-				<motion.div className="relative w-full aspect-square max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-xl xl:max-w-3xl cursor-pointer"
+				<motion.div className="relative w-full aspect-square max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-xl xl:max-w-3xl px-5"
 				            ref={ref}
 				            style={{perspective: 2000}}
 				            onMouseMove={handleMouseMove}
@@ -80,7 +80,7 @@ const Cards = forwardRef(function Cards({project}, ref) {
 									            animate={{scale: isHovered ? 1.05 : 1}}
 									            transition={{duration: 0.3, ease: [0.25, 0.1, 0.25, 1]}}
 									>
-										<span className="text-white/90 font-semibold text-xs sm:text-sm md:text-base tracking-wider">
+										<span className="text-white/90 font-semibold text-xs sm:text-sm md:text-base tracking-wider select-none">
 											COMING SOON
 										</span>
 									</motion.div>
