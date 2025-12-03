@@ -13,7 +13,6 @@ export default function FeaturedProjects() {
 	const [isVisible, setIsVisible] = useState(false)
 	const [isInProject, setIsInProject] = useState(false)
 	const cardsRef = useRef([])
-	const containerRef = useRef(null)
 	const sectionRef = useRef(null)
 
 	const updateActiveProject = useCallback(() => {
@@ -75,32 +74,17 @@ export default function FeaturedProjects() {
 		return () => window.removeEventListener('scroll', handleScroll)
 	},[updateActiveProject, checkIfInProjects])
 
-	useEffect(() => {
-		if (!containerRef.current) return
-
-		const isMobile = window.innerWidth < 1024
-		const margin = isMobile ? "-50px" : "-200px"
-
-		const observer = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				setIsVisible(true)
-				observer.disconnect()
-			}
-		},{rootMargin: margin})
-		observer.observe(containerRef.current)
-		return () => observer.disconnect()
-	},[])
-
 	return (
 		<div ref={sectionRef} className="flex flex-col items-center justify-center w-full h-max px-4 sm:px-6 lg:px-8">
 			<ProjectsTitle />
-			<div ref={containerRef} className="relative w-full flex flex-col lg:flex-row lg:items-start lg:justify-center ">
+			<div className="relative w-full flex flex-col lg:flex-row lg:items-start lg:justify-center ">
 
 				<motion.div className="flex flex-col items-center lg:items-end gap-20 sm:gap-30 md:gap-40 lg:gap-50 py-10 sm:py-20 lg:py-30 w-full lg:w-1/2"
 				            initial={{opacity: 0, y: 20}}
 				            whileInView={{opacity: 1, y: 0}}
 				            viewport={{ once: true, amount: 0.1 }}
 				            transition={{duration: 0.5, ease: "easeOut"}}
+				            onViewportEnter={() => setIsVisible(true)}
 				>
 					{projects.map((project, index) => (
 						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} isVisible={isVisible} />
