@@ -12,7 +12,7 @@ export const badges = {
 	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
 }
 const projectImages = {
-	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1536, height: 4041},
+	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1563, height: 4041},
 	portfolio: {alt: "Portfolio"},
 	third: {alt: "Third project"}
 }
