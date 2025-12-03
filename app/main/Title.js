@@ -44,7 +44,7 @@ export default function Title({startAnimation}) {
 
 
 				<div  className="flex items-center justify-center gap-4  rounded-full mt-4 sm:mt-5">
-					<Button text="View my work" bgColor="bg-[#1a1a1a]" glowColor="from-cyan-200 to-blue-300" underGlowColor="bg-[#1a1a1a]/40" textColor="text-white" onClick={handleScroll}/>
+					<Button text="View my work" bgColor="bg-[#1a1a1a]" glowColor="from-cyan-200 to-blue-300" underGlowColor="bg-[#1a1a1a]/40" textColor="text-white" onClick={handleScroll} startAnimation={startAnimation} />
 				</div>
 				</motion.div>
 			</motion.div>

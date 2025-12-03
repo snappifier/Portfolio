@@ -3,7 +3,7 @@
 import {motion, useMotionValue, animate} from "motion/react";
 import {useRef, useEffect, useState} from "react";
 
-export default function Button({text ,bgColor, glowColor, underGlowColor, textColor, onClick }) {
+export default function Button({text ,bgColor, glowColor, textColor, onClick, startAnimation }) {
 	const containerRef = useRef(null);
 	const buttonRef = useRef(null);
 	const timeoutRef = useRef(null);
@@ -17,6 +17,7 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 	const y = useMotionValue(0);
 
 	useEffect(() => {
+		if (!startAnimation) return;
 		if (buttonRef.current) {
 			const rect = buttonRef.current.getBoundingClientRect();
 			y.set(rect.height / 2);
@@ -48,7 +49,7 @@ export default function Button({text ,bgColor, glowColor, underGlowColor, textCo
 				}
 			}
 		}
-	},[])
+	},[startAnimation])
 
 	const handleMouseMove = (e) => {
 		if (!buttonRef.current || !containerRef.current) return;

@@ -36,7 +36,8 @@ const Cards = forwardRef(function Cards({project}, ref) {
 				            viewport={{once: true, amount: 0.2}}
 				            transition={{duration: 0.8, ease: [0.25, 0.1, 0.25, 1]}}
 				>
-					<motion.div className={`absolute -inset-3 sm:-inset-4 ${project.color} rounded-2xl blur-xl sm:blur-2xl`}
+					<motion.div className={`absolute -inset-3 sm:-inset-4 ${project.color} rounded-2xl blur-xl sm:blur-2xl transform-gpu will-change-[filter] backface-hidden`}
+					            style={{ transform: "translateZ(0)" }}
 											initial={{opacity: 0.2}}
 					            animate={{opacity: isHovered ? 0.4 : 0.2}}
 					            transition={{duration: 0.4}}
