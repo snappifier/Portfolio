@@ -9,11 +9,18 @@ export default function Loader({onLoadingComplete}) {
 	const [showLoader, setShowLoader] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
 	const [checking, setChecking] = useState(true);
+	const [blocksAmount, setBlocksAmount] = useState(10);
 
 	const lenis = useLenis();
 
 	useEffect(() => {
 		const hasVisited = sessionStorage.getItem("hasVisited");
+
+		if (window.innerWidth < 768) {
+			setBlocksAmount(5)
+		} else {
+			setBlocksAmount(10)
+		}
 
 		if (!hasVisited) {
 			setShowLoader(true)
@@ -52,7 +59,7 @@ export default function Loader({onLoadingComplete}) {
 		exit: {y: "-100%", transition: {duration: 0.6, ease: "easeOut"}}
 	}
 
-	const blocks = [...Array(10)]
+	const blocks = [...Array(blocksAmount)]
 
 	if (checking) return null
 
@@ -75,7 +82,7 @@ export default function Loader({onLoadingComplete}) {
 
 						>
 							<Typewriter
-								speed={100}
+								speed={60}
 							onComplete={() => {
 								setTimeout(() => setIsVisible(false), 800)
 							}}

@@ -10,6 +10,13 @@ export const badges = {
 	vite: {name: "Vite", icon: "/vite_logo.svg"},
 	postgres: {name: "Postgresql", icon: "/postgresql_logo.png"},
 	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
+	pagespeed: {name: "Pagespeed Insights", icon: "/pagespeed_logo.svg"},
+	javascript: {name: "JavaScript", icon: "/js_logo.png"},
+	css: {name: "CSS", icon: "/css_logo.png"},
+	html: {name: "HTML", icon: "/html_logo.png"},
+	lenis: {name: "Lenis", icon: "/lenis_logo.png"},
+	webstorm: {name: "Webstorm", icon: "/webstorm_logo.svg"},
+	github: {name: "GitHub", icon: "/github_logo.svg"},
 }
 const projectImages = {
 	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1563, height: 4041},
@@ -22,7 +29,7 @@ export const projects = [
 		id: 1,
 		title: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui, badges.pagespeed, badges.javascript, badges.css, badges.html, badges.lenis],
 		image: projectImages.highschool,
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
 		navbarText: "1lo.com.pl",
@@ -33,7 +40,7 @@ export const projects = [
 		id: 2,
 		title: "MY PORTFOLIO",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui, badges.pagespeed, badges.javascript, badges.css, badges.html, badges.lenis],
 		image: projectImages.portfolio,
 		color: "bg-gradient-to-r from-purple-500 to-pink-500",
 		navbarText: "krystianmatwiej.vercel.app",
@@ -44,7 +51,7 @@ export const projects = [
 		id: 3,
 		title: "THIRD PROJECT",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui,],
+		tags: [badges.next, badges.tailwind, badges.react, badges.strapi, badges.motion, badges.railway, badges.vercel, badges.figma, badges.vite, badges.postgres, badges.baseui, badges.pagespeed, badges.javascript, badges.css, badges.html, badges.lenis],
 		image: projectImages.third,
 		color: "bg-gradient-to-r from-emerald-400 to-green-600",
 		navbarText: "thirdproject.com",
@@ -52,6 +59,8 @@ export const projects = [
 		linkRepo: "#"
 	}
 ];
+
+export const StackData = [badges.react, badges.tailwind, badges.motion, badges.next, badges.vercel, badges.figma, badges.webstorm, badges.github, badges.javascript]
 
 export const testData = [
 	{id: 1, color: "bg-red-500",},

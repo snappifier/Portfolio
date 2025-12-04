@@ -4,7 +4,7 @@ import {useState, useRef, useEffect, useCallback} from "react";
 import {motion} from "motion/react";
 import Cards from "./Cards";
 import Info from "./Info";
-import {projects, testData} from "./data"
+import {projects, testData} from "@/app/data"
 import ProjectsTitle from "@/app/Projects/ProjectsTitle";
 
 export default function FeaturedProjects() {
@@ -45,7 +45,7 @@ export default function FeaturedProjects() {
 		const lastRect = lastCard.getBoundingClientRect()
 		const windowHeight = window.innerHeight
 		const showThreshold = windowHeight * 0.6
-		const hideThreshold = windowHeight * 0.5
+		const hideThreshold = windowHeight * 0.6
 		const isInSection = firstRect.top < showThreshold && lastRect.bottom > hideThreshold
 		setIsInProject(isInSection)
 	},[])
