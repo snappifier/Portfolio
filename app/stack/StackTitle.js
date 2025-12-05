@@ -15,11 +15,11 @@ export default function StackTitle() {
 	}
 
 	return (
-		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 pt-20 sm:pt-30 lg:pt-40"
+		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 mt-20 sm:mt-30 lg:mt-40"
 		            variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"
-		            viewport={{ once: true, amount: 1 }}
+		            viewport={{ once: true, amount: 0.9 }}
 		>
 			<motion.h3 variants={itemVariants} className="text-xs sm:text-sm text-blue-200/70 tracking-[0.3em] sm:tracking-[0.4em] font-medium mb-2">EXPERTISE</motion.h3>
 			<motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight drop-shadow-2xl">TECH STACK</motion.h2>
