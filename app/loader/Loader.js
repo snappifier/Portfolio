@@ -82,7 +82,7 @@ export default function Loader({onLoadingComplete}) {
 
 						>
 							<Typewriter
-								speed={60}
+								speed={80}
 							onComplete={() => {
 								setTimeout(() => setIsVisible(false), 800)
 							}}

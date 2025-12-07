@@ -17,6 +17,9 @@ export const badges = {
 	lenis: {name: "Lenis", icon: "/lenis_logo.png"},
 	webstorm: {name: "Webstorm", icon: "/webstorm_logo.svg"},
 	github: {name: "GitHub", icon: "/github_logo.svg"},
+	hyperskill: {name: "Hyperskill", icon: "/hyperskill_logo.png"},
+	youtube: {name: "YouTube", icon: "/youtube_logo.svg"},
+	tryhackme: {name: "TryHackMe", icon: "/tryhackme_logo.svg"}
 }
 const projectImages = {
 	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1563, height: 4041},
@@ -79,6 +82,89 @@ export const StackData = [
 	{name: "Pagespeed Insights", icon: badges.pagespeed.icon, description: "Website performance tool", color: "#4285f4"},
 	{name: "Strapi", icon: badges.strapi.icon, description: "Headless CMS", color: "#4945ff"},
 	{name: "Lenis", icon: badges.lenis.icon, description: "Design tool", color: "#ff906e", darkText: true},
+]
+
+export const learningData = [
+	{
+		id: "hyperskill",
+		name: "HyperSkill",
+		icon: badges.hyperskill.icon,
+		description: "JetBrains Academy",
+		hasDetails: true,
+		certificates: [
+			{name: "Frontend Developer", date: " apr 2025"},
+			{name: "Introduction to Frontend", date: "apr 2025", file: "/certificates/IntroductionToFrontend.pdf"},
+			{name: "Introduction to JavaScript", date: "apr 2025", file: "/certificates/IntroductionToJS.pdf"},
+			{name: "Introduction to HTML and CSS", date: "apr 2025"},
+
+		],
+		profileLink: "https://hyperskill.org/my-learning/620691045"
+	},
+	{
+		id: "react-tutorial",
+		name: "react-tutorial.app",
+		icon: badges.react.icon,
+		description: "React course",
+		hasDetails: true,
+		certificates: [
+			{ name: "Certificate of completion", date: "may 2025", file: "/certificates/ReactTutorial.pdf" },
+		]
+	},
+	{
+		id: "tryhackme",
+		name: "TryHackMe",
+		icon: badges.tryhackme.icon,
+		description: "Security learning",
+		hasDetails: true,
+		profileLink: "https://tryhackme.com/p/nzzhry"
+	},
+	{
+		id: "nextjs-docs",
+		name: "Next.js Docs",
+		icon: badges.next.icon,
+		description: "Official documentation",
+		hasDetails: false,
+		link: "https://nextjs.org/docs"
+	},
+	{
+		id: "react-docs",
+		name: "React Docs",
+		icon: badges.react.icon,
+		description: "Official documentation",
+		hasDetails: false,
+		link: "https://react.dev"
+	},
+	{
+		id: "tailwind-docs",
+		name: "Tailwind CSS Docs",
+		icon: badges.tailwind.icon,
+		description: "Official documentation",
+		hasDetails: false,
+		link: "https://tailwindcss.com/docs"
+	},
+	{
+		id: "motion-docs",
+		name: "Motion.dev Docs",
+		icon: badges.motion.icon,
+		description: "Official documentation",
+		hasDetails: false,
+		link: "https://motion.dev/docs"
+	},
+	{
+		id: "youtube",
+		name: "YouTube",
+		icon: badges.youtube.icon,
+		description: "A few creators I like",
+		hasDetails: true,
+		channels: [
+			{ name: "DeadOverflow", link: "https://www.youtube.com/@deadoverflow"},
+			{ name: "The Coding Sloth", link: "https://www.youtube.com/@TheCodingSloth" },
+			{ name: "CyberFlow", link: "https://www.youtube.com/@cyberflow10" },
+		]
+	},
+
+
+
 ]
 
 export const testData = [

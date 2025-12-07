@@ -43,7 +43,7 @@ export default function TechnologyCard({tag, delay = 0}) {
 				<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-zinc-800 flex items-center justify-center shrink-0 transition-all duration-300"
 				     style={{backgroundColor: hovered ? `${color}20` : `${color}10`, boxShadow: hovered ? `0 0 15px -3px ${color}30` : 'none'}}
 				>
-					<Image src={tag.icon} alt={tag.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain transition-transform duration-300 group-hover:scale-110"/>
+					<Image src={tag.icon} alt={tag.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain transition-transform duration-500 group-hover:scale-120"/>
 				</div>
 
 				<div className="min-w-0">

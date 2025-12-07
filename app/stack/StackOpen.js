@@ -49,7 +49,7 @@ export default function StackOpen({tags, isOpen, onClose}) {
 									<h3 className="text-base sm:text-lg font-bold text-white">All Technologies</h3>
 									<p className="text-xs sm:text-sm text-zinc-500">{tags.length} technologies & tools</p>
 								</div>
-								<button onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors cursor-pointer">
+								<button onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 								</button>
 							</div>
