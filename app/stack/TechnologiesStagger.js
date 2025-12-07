@@ -43,7 +43,7 @@ export default function TechnologiesStagger({ tags, onShow }) {
 
 
 	return (
-		<div className="w-full max-w-4xl mx-auto mt-12 sm:mt-16 lg:mt-20">
+		<div className="w-full max-w-6xl mx-auto mt-12 sm:mt-16 lg:mt-20">
 			<div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
 				{visible.map((tag, index) => (
 					<TechnologyCard key={tag.name} tag={tag} delay={delays[index] || index * 0.05}/>

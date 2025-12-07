@@ -61,26 +61,24 @@ export const projects = [
 ];
 
 export const StackData = [
-	{name: "Next.js", icon: badges.next.icon, description: "React framework"},
-	{name: "Tailwind CSS", icon: badges.tailwind.icon, description: "CSS framework"},
-	{name: "Motion.dev", icon: badges.motion.icon, description: "Animation library"},
-	{name: "Vercel", icon: badges.vercel.icon, description: "Deployment platform"},
-	{name: "React", icon: badges.react.icon, description: "JavaScript library"},
-	{name: "Figma", icon: badges.figma.icon, description: "Design platform"},
-	{name: "Webstorm", icon: badges.webstorm.icon, description: "IDE"},
-	{name: "GitHub", icon: badges.github.icon, description: "Version control"},
-	{name: "JavaScript", icon: badges.javascript.icon, description: "Programming language"},
-	{name: "PostgreSQL", icon: badges.postgres.icon, description: "Database"},
-	{name: "Base UI", icon: badges.baseui.icon, description: "React UI library"},
-	{name: "HTML", icon: badges.html.icon, description: "Markup language"},
-	{name: "CSS", icon: badges.css.icon, description: "Stylesheet language"},
-	{name: "Railway", icon: badges.railway.icon, description: "Deployment platform"},
-	{name: "Vite", icon: badges.vite.icon, description: "Build tool"},
-	{name: "Pagespeed Insights", icon: badges.pagespeed.icon, description: "Website performance tool"},
-	{name: "Strapi", icon: badges.strapi.icon, description: "Headless CMS"},
-	{name: "Lenis", icon: badges.lenis.icon, description: "Design tool"},
-
-
+	{name: "Next.js", icon: badges.next.icon, description: "React framework", color: "#ffffff", darkText: true},
+	{name: "Tailwind CSS", icon: badges.tailwind.icon, description: "CSS framework", color: "#38bdf8", darkText: true},
+	{name: "Motion.dev", icon: badges.motion.icon, description: "Animation library", color: "#facc15", darkText: true},
+	{name: "Vercel", icon: badges.vercel.icon, description: "Deployment platform", color: "#ffffff", darkText: true},
+	{name: "React", icon: badges.react.icon, description: "JavaScript library", color: "#61dafb", darkText: true},
+	{name: "Figma", icon: badges.figma.icon, description: "Design platform", color: "#f24e1e"},
+	{name: "Webstorm", icon: badges.webstorm.icon, description: "IDE", color: "#00cdd7", darkText: true},
+	{name: "GitHub", icon: badges.github.icon, description: "Version control", color: "#ffffff", darkText: true},
+	{name: "JavaScript", icon: badges.javascript.icon, description: "Programming language", color: "#f7df1e", darkText: true},
+	{name: "PostgreSQL", icon: badges.postgres.icon, description: "Database", color: "#336791"},
+	{name: "Base UI", icon: badges.baseui.icon, description: "React UI library", color: "#ffffff", darkText: true},
+	{name: "HTML", icon: badges.html.icon, description: "Markup language", color: "#e34f26"},
+	{name: "CSS", icon: badges.css.icon, description: "Stylesheet language", color: "#1572b6"},
+	{name: "Railway", icon: badges.railway.icon, description: "Deployment platform", color: "#ffffff", darkText: true},
+	{name: "Vite", icon: badges.vite.icon, description: "Build tool", color: "#646cff"},
+	{name: "Pagespeed Insights", icon: badges.pagespeed.icon, description: "Website performance tool", color: "#4285f4"},
+	{name: "Strapi", icon: badges.strapi.icon, description: "Headless CMS", color: "#4945ff"},
+	{name: "Lenis", icon: badges.lenis.icon, description: "Design tool", color: "#ff906e", darkText: true},
 ]
 
 export const testData = [
