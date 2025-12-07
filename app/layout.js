@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased bg-zinc-950 overflow-none`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased bg-zinc-950`}>
       <SmoothScroll>
         {children}
 	      <Analytics />
