@@ -2,16 +2,18 @@
 
 import {useEffect, useRef, useState} from "react";
 import {motion} from "motion/react";
+import TechnologyCard from "@/app/stack/TechnologyCard";
 
 
-export default function TechnologiesStagger({ tags }) {
+export default function TechnologiesStagger({ tags, onShow }) {
 
 	const containerRef = useRef(null);
 	const [delays, setDelays] = useState([]);
-	const [isReady, setIsReady] = useState(false);
 
 	const staggerFactor = 0.001;
-	const baseDelay = 0;
+	const maxVisible = 8;
+	const visible = tags.slice(0, maxVisible);
+	const more = tags.length > maxVisible;
 
 	useEffect(() => {
 		if (!containerRef.current) return;
@@ -36,24 +38,36 @@ export default function TechnologiesStagger({ tags }) {
 		})
 
 		setDelays(newDelays);
-		setIsReady(true);
-	}, [tags, staggerFactor])
+	}, [tags])
 
 
 
 	return (
-		<div ref={containerRef} className="flex flex-wrap items-center justify-center gap-x-12 gap-y-12 sm:gap-x-16 sm:gap-y-16 max-w-6xl mx-auto mt-16 sm:mt-24">
-			{tags.map((tag, index) => (
-				<motion.div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 select-none pointer-events-none"
-										key={tag.name || tag}
-				            initial={{ opacity: 0, y: 10, scale: 0.8 }}
-				            viewport={{ once: true, amount: 0.8 }}
-				            whileInView={isReady ? { opacity: 1, y: 0, scale: 1 } : {}}
-				            transition={{type: 'spring', stiffness: 150, damping: 12, delay: isReady ? (delays[index] + baseDelay) : 0 }}
+		<div className="w-full max-w-4xl mx-auto mt-12 sm:mt-16 lg:mt-20">
+			<div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
+				{visible.map((tag, index) => (
+					<TechnologyCard key={tag.name} tag={tag} delay={delays[index] || index * 0.05}/>
+				))}
+			</div>
+
+			{more && (
+				<motion.div className="flex justify-center mt-6 sm:mt-8"
+				            initial={{opacity: 0, y: 10}}
+				            whileInView={{opacity: 1, y: 0}}
+				            viewport={{ once: true}}
+				            transition={{delay: 0.4}}
 				>
-					{tag.icon && <img src={tag.icon} alt={tag.name} className="w-8 sm:w-12 lg:w-15 h-8 sm:h-12 lg:h-15"/>}
+					<motion.button className="flex items-center gap-2 px-5 py-2.5 rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors cursor-pointer"
+					               onClick={onShow}
+					               whileHover={{y: -2}}
+					               whileTap={{scale: 0.98}}
+					>
+						<span className="text-sm">View all</span>
+						<span className="text-xs text-zinc-600">+{tags.length - maxVisible}</span>
+					</motion.button>
 				</motion.div>
-			))}
+			)}
+
 		</div>
 	)
 }

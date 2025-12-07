@@ -60,8 +60,7 @@ export const projects = [
 	}
 ];
 
-export const StackData = [badges.react, badges.tailwind, badges.motion, badges.next, badges.vercel, badges.figma, badges.webstorm, badges.github, badges.javascript]
-export const StackData2 = [
+export const StackData = [
 	{name: "Next.js", icon: badges.next.icon, description: "React framework"},
 	{name: "Tailwind CSS", icon: badges.tailwind.icon, description: "CSS framework"},
 	{name: "Motion.dev", icon: badges.motion.icon, description: "Animation library"},
@@ -71,6 +70,16 @@ export const StackData2 = [
 	{name: "Webstorm", icon: badges.webstorm.icon, description: "IDE"},
 	{name: "GitHub", icon: badges.github.icon, description: "Version control"},
 	{name: "JavaScript", icon: badges.javascript.icon, description: "Programming language"},
+	{name: "PostgreSQL", icon: badges.postgres.icon, description: "Database"},
+	{name: "Base UI", icon: badges.baseui.icon, description: "React UI library"},
+	{name: "HTML", icon: badges.html.icon, description: "Markup language"},
+	{name: "CSS", icon: badges.css.icon, description: "Stylesheet language"},
+	{name: "Railway", icon: badges.railway.icon, description: "Deployment platform"},
+	{name: "Vite", icon: badges.vite.icon, description: "Build tool"},
+	{name: "Pagespeed Insights", icon: badges.pagespeed.icon, description: "Website performance tool"},
+	{name: "Strapi", icon: badges.strapi.icon, description: "Headless CMS"},
+	{name: "Lenis", icon: badges.lenis.icon, description: "Design tool"},
+
 
 ]
 
