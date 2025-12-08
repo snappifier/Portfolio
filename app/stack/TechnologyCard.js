@@ -47,7 +47,7 @@ export default function TechnologyCard({tag, delay = 0}) {
 				</div>
 
 				<div className="min-w-0">
-					<p className="text-sm sm:text-base text-white font-medium truncate transition-colors duration-500 group-hover:text-white">{tag.name}</p>
+					<p className="text-sm sm:text-base text-white font-medium truncate">{tag.name}</p>
 					<p className="text-xs sm:text-sm text-zinc-500 truncate transition-colors duration-500 group-hover:text-zinc-400">{tag.description}</p>
 				</div>
 			</motion.div>

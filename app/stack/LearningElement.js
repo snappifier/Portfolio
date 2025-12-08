@@ -5,6 +5,8 @@ import Image from "next/image";
 
 export default function LearningElement({element, onClick, delay = 0}) {
 
+	const color = element.color || '#52525b'
+
 	const handleClick = () => {
 		if (element.hasDetails) {
 			onClick(element);
@@ -21,12 +23,14 @@ export default function LearningElement({element, onClick, delay = 0}) {
 		            transition={{type: 'spring', stiffness: 120, damping: 14, delay}}
 		            onClick={handleClick}
 		>
-			<div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-zinc-800 flex items-center justify-center shrink-0 overflow-hidden`}>
+			<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg  flex items-center justify-center shrink-0 overflow-hidden"
+			     style={{backgroundColor: `${color}15`}}
+			>
 				<Image src={element.icon} alt={element.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain group-hover:scale-120 transition-transform duration-500"/>
 			</div>
 			<div className="flex-1 min-w-0">
 				<p className="text-sm sm:text-base text-white font-medium truncate">{element.name}</p>
-				<p className="text-xs sm:text-sm text-zinc-500 truncate">{element.description}</p>
+				<p className="text-xs sm:text-sm text-zinc-500 truncate transition-colors duration-500 group-hover:text-zinc-400">{element.description}</p>
 			</div>
 
 			{element.hasDetails ? (

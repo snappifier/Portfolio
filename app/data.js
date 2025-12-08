@@ -89,6 +89,7 @@ export const learningData = [
 		id: "hyperskill",
 		name: "HyperSkill",
 		icon: badges.hyperskill.icon,
+		color: "#61dafb",
 		description: "JetBrains Academy",
 		hasDetails: true,
 		certificates: [
@@ -115,8 +116,12 @@ export const learningData = [
 		id: "tryhackme",
 		name: "TryHackMe",
 		icon: badges.tryhackme.icon,
+		color: "#84cc16",
 		description: "Security learning",
 		hasDetails: true,
+		certificates: [
+			{name: "Pre Security", date: "oct 2025", file: "/certificates/PreSecurity.pdf"}
+		],
 		profileLink: "https://tryhackme.com/p/nzzhry"
 	},
 	{
@@ -159,6 +164,7 @@ export const learningData = [
 		id: "youtube",
 		name: "YouTube",
 		icon: badges.youtube.icon,
+		color: "#FF0000",
 		description: "A few creators I like",
 		hasDetails: true,
 		channels: [
