@@ -104,6 +104,7 @@ export const learningData = [
 		id: "react-tutorial",
 		name: "react-tutorial.app",
 		icon: badges.react.icon,
+		color: "#61dafb",
 		description: "React course",
 		hasDetails: true,
 		certificates: [
@@ -122,6 +123,7 @@ export const learningData = [
 		id: "nextjs-docs",
 		name: "Next.js Docs",
 		icon: badges.next.icon,
+		color: "#ffffff",
 		description: "Official documentation",
 		hasDetails: false,
 		link: "https://nextjs.org/docs"
@@ -130,6 +132,7 @@ export const learningData = [
 		id: "react-docs",
 		name: "React Docs",
 		icon: badges.react.icon,
+		color: "#61dafb",
 		description: "Official documentation",
 		hasDetails: false,
 		link: "https://react.dev"
@@ -138,6 +141,7 @@ export const learningData = [
 		id: "tailwind-docs",
 		name: "Tailwind CSS Docs",
 		icon: badges.tailwind.icon,
+		color: "#38bdf8",
 		description: "Official documentation",
 		hasDetails: false,
 		link: "https://tailwindcss.com/docs"
@@ -146,6 +150,7 @@ export const learningData = [
 		id: "motion-docs",
 		name: "Motion.dev Docs",
 		icon: badges.motion.icon,
+		color: "#facc15",
 		description: "Official documentation",
 		hasDetails: false,
 		link: "https://motion.dev/docs"

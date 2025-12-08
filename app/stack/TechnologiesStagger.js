@@ -57,10 +57,10 @@ export default function TechnologiesStagger({ tags, onShow }) {
 				            viewport={{ once: true}}
 				            transition={{delay: 0.4}}
 				>
-					<motion.button className="flex items-center gap-2 px-5 py-2.5 rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors cursor-pointer"
+					<motion.button className="flex items-center gap-2 px-5 py-2.5 rounded-sm bg-zinc-900 hover:bg-zinc-800  text-zinc-400 hover:text-white  transition-colors duration-300 cursor-pointer"
 					               onClick={onShow}
-					               whileHover={{y: -2}}
-					               whileTap={{scale: 0.98}}
+					               whileHover={{}}
+					               whileTap={{scale: 0.95}}
 					>
 						<span className="text-sm">View all</span>
 						<span className="text-xs text-zinc-600">+{tags.length - maxVisible}</span>
