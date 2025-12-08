@@ -168,9 +168,10 @@ export const learningData = [
 		description: "A few creators I like",
 		hasDetails: true,
 		channels: [
-			{ name: "DeadOverflow", link: "https://www.youtube.com/@deadoverflow"},
-			{ name: "The Coding Sloth", link: "https://www.youtube.com/@TheCodingSloth" },
-			{ name: "CyberFlow", link: "https://www.youtube.com/@cyberflow10" },
+			{name: "DeadOverflow", link: "https://www.youtube.com/@deadoverflow"},
+			{name: "Fireship", link: "https://www.youtube.com/@Fireship"},
+			{name: "The Coding Sloth", link: "https://www.youtube.com/@TheCodingSloth" },
+			{name: "CyberFlow", link: "https://www.youtube.com/@cyberflow10" },
 		]
 	},
 
