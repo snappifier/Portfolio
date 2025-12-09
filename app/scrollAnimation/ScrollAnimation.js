@@ -12,7 +12,7 @@ export default function ScrollAnimation() {
 
 	const handleClick = (e) => {
 		const progress = ref.current
-		if (!progress) return
+		if (!progress || !lenis) return
 
 		const {width: rectWidth, left} = progress.getBoundingClientRect()
 		const clickX = e.clientX - left

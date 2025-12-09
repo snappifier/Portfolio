@@ -12,15 +12,18 @@ export default function StackOpen({tags, isOpen, onClose}) {
 	useEffect(() => {
 		if (isOpen) {
 			lenis?.stop()
-			document.body.style.overflow = 'hidden'
+			document.body.style.setProperty('overflow', 'hidden', 'important');
+			document.documentElement.style.setProperty('overflow', 'hidden', 'important');
 		}
 		else {
 			lenis?.start()
-			document.body.style.overflow = ''
+			document.body.style.removeProperty('overflow');
+			document.documentElement.style.removeProperty('overflow');
 		}
 
 		return () => {
-			document.body.style.overflow = ''
+			document.body.style.removeProperty('overflow');
+			document.documentElement.style.removeProperty('overflow');
 			lenis?.start()
 		}
 	}, [isOpen, lenis])

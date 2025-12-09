@@ -1,10 +1,10 @@
 'use client'
 
-import {useState, useRef, useEffect} from "react";
+import {useState, useRef, useEffect, memo} from "react";
 import {motion} from "motion/react";
 import Image from "next/image";
 
-export default function TechnologyCard({tag, delay = 0}) {
+function TechnologyCard({tag, delay = 0}) {
 	const [hovered, setHovered] = useState(false)
 	const timeoutRef = useRef(null)
 
@@ -34,8 +34,8 @@ export default function TechnologyCard({tag, delay = 0}) {
 		            onMouseEnter={handleMouseEnter}
 		            onMouseLeave={handleMouseLeave}
 		>
-			<div className="absolute -inset-px rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100 blur-md"
-			     style={{backgroundColor: color, opacity: hovered ? 0.25 : 0}}
+			<div className={`absolute -inset-px rounded-lg ${hovered ? "opacity-25" : "opacity-0"} transition-opacity duration-500 blur-md`}
+			     style={{backgroundColor: color}}
 			/>
 			<motion.div className="relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-zinc-900 border transition-colors duration-300"
 									style={{borderColor: hovered ? `${color}50` : '#18181b'}}
@@ -55,3 +55,5 @@ export default function TechnologyCard({tag, delay = 0}) {
 	)
 
 }
+
+export default memo(TechnologyCard)

@@ -33,7 +33,7 @@ export default function Loader({onLoadingComplete}) {
 			if (onLoadingComplete) onLoadingComplete();
 		}
 		setChecking(false)
-	}, [])
+	}, [onLoadingComplete])
 
 	useEffect(() => {
 		if (showLoader) {

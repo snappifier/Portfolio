@@ -1,14 +1,14 @@
 'use client'
 
 import {motion} from "motion/react";
-import {useEffect, useRef, useState} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 
 export default function AnimateStagger({ tags, baseDelay = 0, staggerFactor = 0.002 }) {
 	const containerRef = useRef(null);
 	const [delays, setDelays] = useState([]);
 	const [isReady, setIsReady] = useState(false);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!containerRef.current) return;
 
 		const tagElements = Array.from(containerRef.current.children);

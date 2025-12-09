@@ -4,7 +4,7 @@ import {useState, useRef, useEffect, useCallback} from "react";
 import {motion} from "motion/react";
 import Cards from "./Cards";
 import Info from "./Info";
-import {projects, testData} from "@/app/data"
+import {projects} from "@/app/data"
 import ProjectsTitle from "@/app/Projects/ProjectsTitle";
 
 export default function FeaturedProjects() {
@@ -20,17 +20,19 @@ export default function FeaturedProjects() {
 
 		const breakPoint = window.innerHeight * 0.5
 
+		let newActiveProject = 0
+
 		for (let i = cardsRef.current.length - 1; i >= 0; i--) {
 			const ref = cardsRef.current[i]
 			if (!ref) continue
 			const rect = ref.getBoundingClientRect()
 
 			if (rect.top <= breakPoint) {
-				setActiveProject(i)
-				return
+				newActiveProject = i
+				break
 			}
 		}
-		setActiveProject(0)
+		setActiveProject(prev => prev !== newActiveProject ? newActiveProject : prev)
 	}, [])
 
 	const checkIfInProjects = useCallback(() => {
@@ -47,7 +49,7 @@ export default function FeaturedProjects() {
 		const showThreshold = windowHeight * 0.6
 		const hideThreshold = windowHeight * 0.6
 		const isInSection = firstRect.top < showThreshold && lastRect.bottom > hideThreshold
-		setIsInProject(isInSection)
+		setIsInProject(prev => prev !== isInSection ? isInSection : prev)
 	},[])
 
 	useEffect(() => {
@@ -87,7 +89,7 @@ export default function FeaturedProjects() {
 				            onViewportEnter={() => setIsVisible(true)}
 				>
 					{projects.map((project, index) => (
-						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} isVisible={isVisible} />
+						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} />
 					))}
 
 				</motion.div>

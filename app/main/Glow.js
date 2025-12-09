@@ -17,7 +17,7 @@ export default function Glow({startAnimation}) {
 		            transition={{duration: 3, ease: "easeOut"}}
 		>
 			<motion.div className="w-full h-full flex items-center justify-center"
-			            animate={ startAnimation ? {opacity: [1, 0.8]} : {opacity: 1}}
+			            animate={ (startAnimation) ? {opacity: [1, 0.8]} : {opacity: 1}}
 			            transition={{duration: 5, ease: "easeInOut", repeat: Infinity, repeatType: "mirror", delay: 3}}
 			>
 				<div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)]  "/>

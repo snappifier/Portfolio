@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useRef, useState} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 import {motion} from "motion/react";
 import TechnologyCard from "@/app/stack/TechnologyCard";
 
@@ -15,7 +15,7 @@ export default function TechnologiesStagger({ tags, onShow }) {
 	const visible = tags.slice(0, maxVisible);
 	const more = tags.length > maxVisible;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!containerRef.current) return;
 
 		const tagElements = Array.from(containerRef.current.children);

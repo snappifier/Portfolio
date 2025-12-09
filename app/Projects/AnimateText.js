@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { animate, stagger } from "motion/react";
 import { splitText } from "motion-plus";
 
 const AnimateText = ({ children, className, as: Tag = "div", type = "char", delay = 0, duration = 0.6, bounce = 0.5, staggerD = 0.03 }) => {
 	const ref = useRef(null)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!ref.current) return
 
 		ref.current.style.visibility = 'visible'

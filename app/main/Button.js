@@ -9,6 +9,7 @@ export default function Button({text ,bgColor, glowColor, textColor, onClick, st
 	const timeoutRef = useRef(null);
 	const isUserInteractingRef = useRef(false);
 	const introAnimationRef = useRef(null);
+	const introTimeoutRef = useRef(null);
 
 	const [isIntro, setIsIntro] = useState(true);
 	const [isHovered, setIsHovered] = useState(false);
@@ -31,7 +32,7 @@ export default function Button({text ,bgColor, glowColor, textColor, onClick, st
 							if (!isUserInteractingRef.current) {
 								setIsIntro(false);
 
-								setTimeout(() => {
+								introTimeoutRef.current = setTimeout(() => {
 									if (!isUserInteractingRef.current) {
 										x.set(rect.width / 2);
 									}
@@ -50,6 +51,17 @@ export default function Button({text ,bgColor, glowColor, textColor, onClick, st
 			}
 		}
 	},[startAnimation])
+
+	useEffect(() => {
+		return () => {
+			if (timeoutRef.current) {
+				clearTimeout(timeoutRef.current);
+			}
+			if (introTimeoutRef.current) {
+				clearTimeout(introTimeoutRef.current);
+			}
+		};
+	}, []);
 
 	const handleMouseMove = (e) => {
 		if (!buttonRef.current || !containerRef.current) return;

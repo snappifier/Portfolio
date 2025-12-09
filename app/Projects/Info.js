@@ -1,16 +1,17 @@
 'use client'
 
+import {memo} from 'react';
 import {motion, AnimatePresence} from "motion/react";
 import AnimateText from "./AnimateText"
 import AnimateStagger from "@/app/Projects/AnimateStagger";
 
-export default function Info({project, isVisible, isMobile = false}) {
+function Info({project, isVisible, isMobile = false}) {
 	if (!project) return null;
 
 	if (isMobile) return (
 		<AnimatePresence>
 			{isVisible && (
-				<motion.div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800 p-4 sm:p-5 lg:hidden"
+				<motion.div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950  border-t border-zinc-800 p-4 sm:p-5 lg:hidden"
 				            initial={{y: "100%", opacity: 0}}
 				            animate={{y: 0, opacity: 1}}
 				            exit={{y: "100%", opacity: 0}}
@@ -62,7 +63,7 @@ export default function Info({project, isVisible, isMobile = false}) {
 								<div className="flex items-center justify-center cursor-pointer select-none">
 									<p className="text-sm text-white tracking-wide">See Live</p>
 								</div>
-								<div className="flex items0center justify-center gap-1.5 rounded-sm cursor-pointer select-none bg-zinc-800 text-white px-3 py-1.5">
+								<div className="flex items-center justify-center gap-1.5 rounded-sm cursor-pointer select-none bg-zinc-800 text-white px-3 py-1.5">
 									<svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24">
 										<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
 											<path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.4 13.4 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"/>
@@ -124,4 +125,6 @@ export default function Info({project, isVisible, isMobile = false}) {
 		</div>
 	)
 }
+
+export default memo(Info)
 

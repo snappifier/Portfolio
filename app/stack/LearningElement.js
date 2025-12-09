@@ -1,9 +1,10 @@
 'use client'
 
 import {motion} from "motion/react";
+import {memo} from "react";
 import Image from "next/image";
 
-export default function LearningElement({element, onClick, delay = 0}) {
+function LearningElement({element, onClick, delay = 0}) {
 
 	const color = element.color || '#52525b'
 
@@ -61,3 +62,5 @@ export default function LearningElement({element, onClick, delay = 0}) {
 		</motion.a>
 	)
 }
+
+export default memo(LearningElement)
