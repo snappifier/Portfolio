@@ -3,7 +3,7 @@ import {motion, useMotionValue, useSpring, useTransform} from "motion/react";
 import {forwardRef, useState, memo, useRef, useCallback} from "react";
 import Image from "next/image";
 
-const Cards = forwardRef(function Cards({project}, ref) {
+const Cards = forwardRef(function Cards({project, priority = false}, ref) {
 	const hasImage = project.image?.src && project.image?.src.trim() !== "";
 
 	const x = useMotionValue(0.5);
@@ -70,7 +70,7 @@ const Cards = forwardRef(function Cards({project}, ref) {
 								<motion.div className="w-full h-full pointer-events-none select-none group-hover:scale-105 transition-transform duration-600"
 								            style={{transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'}}
 								>
-									<Image src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} className="w-full h-full object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw"/>
+									<Image src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} className="w-full h-full object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" priority={priority}/>
 								</motion.div>
 							) : (
 								<div className={`w-full h-full ${project.color} flex flex-col items-center justify-center`}>

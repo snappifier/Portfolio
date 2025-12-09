@@ -89,7 +89,7 @@ export default function FeaturedProjects() {
 				            onViewportEnter={() => setIsVisible(true)}
 				>
 					{projects.map((project, index) => (
-						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} />
+						<Cards key={project.id} project={project} ref={(el) => cardsRef.current[index] = el} priority={true} />
 					))}
 
 				</motion.div>
