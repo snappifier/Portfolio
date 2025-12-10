@@ -92,7 +92,7 @@ function Info({project, isVisible, isMobile = false}) {
 				>
 
 					<AnimateText as="h2" className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight  w-full" >{project.title}</AnimateText>
-					<AnimateText as="p" className="text-sm md:text-base lg:text-lg text-zinc-400 leading-relaxed w-full"
+					<AnimateText as="p" className="text-sm md:text-base lg:text-lg text-zinc-400 leading-tight w-full"
 					             duration={1}
 					             bounce={0.5}
 					             type="lines"

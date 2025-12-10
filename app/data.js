@@ -31,7 +31,7 @@ export const projects = [
 	{
 		id: 1,
 		title: "HIGH SCHOOL OF JAN ZAMOYSKI IN ZAMOŚĆ",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
+		description: "A modern platform built to serve the school community. It combines a fast interface for students with an intuitive CMS, allowing the staff to easily manage news, galleries, and schedules.",
 		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
 		image: projectImages.highschool,
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
@@ -120,6 +120,7 @@ export const learningData = [
 		description: "Security learning",
 		hasDetails: true,
 		certificates: [
+			{name: "Cyber Security 101", date: "in progress"},
 			{name: "Pre Security", date: "oct 2025", file: "/certificates/PreSecurity.pdf"}
 		],
 		profileLink: "https://tryhackme.com/p/nzzhry"
