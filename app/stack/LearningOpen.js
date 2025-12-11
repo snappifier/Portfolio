@@ -74,7 +74,7 @@ export default function LearningOpen({element, isOpen, onClose}) {
 										<Image src={element.icon} alt={element.name} width={28} height={28} className="w-6 h-6 object-contain select-none pointer-events-none"/>
 									</div>
 									<div>
-										<h3 className="text-base sm:text-lg font-bold text-white">{element.name}</h3>
+										<h3 className="text-base sm:text-lg font-bold text-white select-all">{element.name}</h3>
 										<p className="text-xs sm:text-sm text-zinc-500 select-none">{element.description}</p>
 									</div>
 								</div>

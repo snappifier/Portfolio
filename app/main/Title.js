@@ -30,12 +30,12 @@ export default function Title({startAnimation}) {
 			            animate={startAnimation ? "visible" : "hidden"}
 			>
 				<motion.div variants={itemVariants}>
-					<h2 className="text-xs sm:text-sm lg:text-lg text-blue-200/70 tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.4em] font-medium mb-3 sm:mb-4 lg:mb-6 text-center ">FRONTEND DEVELOPER</h2>
+					<h2 className="text-xs sm:text-sm lg:text-lg text-blue-200/70 tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.4em] font-medium mb-3 sm:mb-4 lg:mb-6 text-center select-none">FRONTEND DEVELOPER</h2>
 				</motion.div>
 				<motion.div variants={itemVariants}>
-					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-2 tracking-tight drop-shadow-2xl text-center">KRYSTIAN MATWIEJ</h1>
+					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-2 tracking-tight drop-shadow-2xl text-center select-all">KRYSTIAN MATWIEJ</h1>
 				</motion.div>
-				<motion.div variants={itemVariants} className="w-full flex flex-col items-center">
+				<motion.div variants={itemVariants} className="w-full flex flex-col items-center select-none">
 					<p className=" max-w-xs sm:max-w-md lg:max-w-2xl text-sm sm:text-base lg:text-xl text-slate-300 mx-auto leading-relaxed sm:leading-loose text-center px-2">
 						I build immersive web experiences that feel alive by combining the
 						<span className="text-white font-medium"> speed of Next.js </span>

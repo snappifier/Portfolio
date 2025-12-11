@@ -15,7 +15,7 @@ export default function ProjectsTitle() {
 	}
 
 	return (
-		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 pt-20 sm:pt-30 lg:pt-40"
+		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 pt-20 sm:pt-30 lg:pt-40 select-none"
 								variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"
