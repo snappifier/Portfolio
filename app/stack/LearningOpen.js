@@ -8,6 +8,7 @@ import {useLenis} from "lenis/react";
 export default function LearningOpen({element, isOpen, onClose}) {
 	const lenis = useLenis()
 	const [openedCerts, setOpenedCerts] = useState({})
+	const [pressedCardIndex, setPressedCardIndex] = useState(null)
 
 	useEffect(() => {
 		if (isOpen) {
@@ -74,10 +75,10 @@ export default function LearningOpen({element, isOpen, onClose}) {
 									</div>
 									<div>
 										<h3 className="text-base sm:text-lg font-bold text-white">{element.name}</h3>
-										<p className="text-xs sm:text-sm text-zinc-500">{element.description}</p>
+										<p className="text-xs sm:text-sm text-zinc-500 select-none">{element.description}</p>
 									</div>
 								</div>
-								<motion.button className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer" onClick={onClose} whileTap={{scale: 0.95}}>
+								<motion.button className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer" onClick={onClose} whileTap={{scale: 0.9}}>
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 								</motion.button>
 							</div>
@@ -85,16 +86,17 @@ export default function LearningOpen({element, isOpen, onClose}) {
 							<div className="p-4 sm:p-5 max-h-[50vh] overflow-y-auto overscroll-contain">
 								{hasChannels && (
 									<div className="space-y-2">
-										<p className="text-xs text-zinc-600 uppercase tracking-wider mb-3">Favorite Channels</p>
+										<p className="text-xs text-zinc-600 uppercase tracking-wider mb-3 select-none">Favorite Channels</p>
 										{element.channels.map((channel, index) => (
-											<motion.a className="group flex items-center justify-between gap-3 p-3 rounded-sm bg-zinc-800/50 cursor-pointer"
+											<motion.a className="group flex items-center justify-between gap-3 p-3 rounded-sm bg-zinc-800/50 cursor-pointer select-none"
 																href={channel.link}
 																target="_blank"
 																rel="noopener noreferrer"
 																key={channel.name}
 																initial={{opacity: 0, x: -10}}
 																animate={{opacity: 1, x: 0}}
-																transition={{delay: index * 0.05}}
+																transition={{delay: 0, opacity: {delay: index * 0.05}, x: {delay: index * 0.05}}}
+											          whileTap={{scale: 0.95}}
 											>
 												<span className="text-sm text-zinc-300">{channel.name}</span>
 												<svg className="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -105,18 +107,21 @@ export default function LearningOpen({element, isOpen, onClose}) {
 
 								{hasCertificate && (
 									<div className="space-y-2">
-										<p className="text-xs text-zinc-600 uppercase tracking-wider mb-3">Certificates</p>
+										<p className="text-xs text-zinc-600 uppercase tracking-wider mb-3 select-none">Certificates</p>
 										{element.certificates.map((cert, index) => (
 											cert.file ? (
-												<motion.a className="group flex items-center justify-between p-3 rounded-sm bg-zinc-800/50 cursor-pointer"
+												<motion.a className="group flex items-center justify-between p-3 rounded-sm bg-zinc-800/50 cursor-pointer select-none"
 																	href={cert.file}
 																	target="_blank"
 																	rel="noopener noreferrer"
 																	key={cert.name}
 																	initial={{ opacity: 0, x: -10 }}
 																	animate={{ opacity: 1, x: 0 }}
-																	transition={{ delay: index * 0.05 }}
-																	onClick={() => handleCertClick(index)}
+																	transition={{ delay: 0, opacity: { delay: index * 0.05 }, x: { delay: index * 0.05} }}
+												          onPointerDown={() => setPressedCardIndex(index)}
+												          onPointerLeave={() => setPressedCardIndex(null)}
+																	onPointerUp={(e) => {if (pressedCardIndex === index && (e.button === 0 || e.button === 1)) handleCertClick(index); setPressedCardIndex(null); }}
+												          whileTap={{scale: 0.95}}
 												>
 													<div className="flex items-center gap-2 flex-1 min-w-0">
 														<span className={`text-sm truncate transition-colors duration-300 ${openedCerts[index] ? 'text-green-400' : 'text-zinc-300'}`}>
@@ -131,7 +136,7 @@ export default function LearningOpen({element, isOpen, onClose}) {
 													</div>
 												</motion.a>
 											) : (
-												<motion.div className="group flex items-center justify-between p-3 rounded-sm bg-zinc-800/50"
+												<motion.div className="group flex items-center justify-between p-3 rounded-sm bg-zinc-800/50 select-none"
 																		key={cert.name}
 																		initial={{ opacity: 0, x: -10 }}
 																		animate={{ opacity: 1, x: 0 }}
@@ -156,10 +161,10 @@ export default function LearningOpen({element, isOpen, onClose}) {
 
 							{element.profileLink && (
 								<div className="p-4 sm:p-5 border-t border-zinc-800">
-									<a href={element.profileLink} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 p-3 rounded-sm bg-zinc-800 text-sm text-zinc-400 hover:text-white transition-colors">
+									<motion.a href={element.profileLink} target="_blank" rel="noopener noreferrer" whileTap={{scale: 0.95}} className="w-full flex items-center justify-center gap-2 p-3 rounded-sm bg-zinc-800 text-sm text-zinc-400 hover:text-white transition-colors select-none">
 										View Profile
 										<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-									</a>
+									</motion.a>
 								</div>
 							)}
 						</div>

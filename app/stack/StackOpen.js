@@ -49,28 +49,29 @@ export default function StackOpen({tags, isOpen, onClose}) {
 						<div className="bg-zinc-900 rounded-sm border border-zinc-800 overflow-hidden">
 							<div className="flex items-center justify-between p-4 sm:p-5 border-b border-zinc-800">
 								<div>
-									<h3 className="text-base sm:text-lg font-bold text-white">All Technologies</h3>
-									<p className="text-xs sm:text-sm text-zinc-500">{tags.length} technologies & tools</p>
+									<h3 className="text-base sm:text-lg font-bold text-white select-none pointer-events-none">All Technologies</h3>
+									<p className="text-xs sm:text-sm text-zinc-500 select-none pointer-events-none">{tags.length} technologies & tools</p>
 								</div>
-								<button onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer">
+								<motion.button whileTap={{scale: 0.9}} onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-								</button>
+								</motion.button>
 							</div>
 
 							<ReactLenis className="p-4 sm:p-5 max-h-[60vh] overflow-y-auto overscroll-contain"
 													root={false}
 							            options={{duration: 1.2, prevent: true}}
 							>
-								<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 select-none">
 									{tags.map((tag, index) => (
 										<motion.div className="flex items-center gap-3 p-3 rounded-sm bg-zinc-800/50"
 										            key={tag.name}
 										            initial={{opacity: 0, x: -10}}
 																animate={{opacity: 1, x: 0}}
-																transition={{delay: index * 0.03}}
+																transition={{opacity: {delay: index * 0.05}, x: {delay: index * 0.05}}}
+										            whileHover={{scale: 1.05}}
 										>
 											<div className="w-9 h-9 rounded-lg bg-zinc-800 flex items-center justify-center shrink-0 overflow-hidden">
-												<Image src={tag.icon} alt={tag.name} width={24} height={24} className="w-5 h-5 object-contain"/>
+												<Image src={tag.icon} alt={tag.name} width={24} height={24} className="w-5 h-5 object-contain pointer-events-none"/>
 
 											</div>
 											<div className="min-w-0">

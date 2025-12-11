@@ -43,12 +43,12 @@ function TechnologyCard({tag, delay = 0}) {
 				<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-zinc-800 flex items-center justify-center shrink-0 transition-all duration-300"
 				     style={{backgroundColor: hovered ? `${color}20` : `${color}10`, boxShadow: hovered ? `0 0 15px -3px ${color}30` : 'none'}}
 				>
-					<Image src={tag.icon} alt={tag.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain transition-transform duration-500 group-hover:scale-120"/>
+					<Image src={tag.icon} alt={tag.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain transition-transform duration-500 group-hover:scale-120 select-none pointer-events-none"/>
 				</div>
 
 				<div className="min-w-0">
 					<p className="text-sm sm:text-base text-white font-medium truncate">{tag.name}</p>
-					<p className="text-xs sm:text-sm text-zinc-500 truncate transition-colors duration-500 group-hover:text-zinc-400">{tag.description}</p>
+					<p className="text-xs sm:text-sm text-zinc-500 truncate transition-colors duration-500 group-hover:text-zinc-400 select-none">{tag.description}</p>
 				</div>
 			</motion.div>
 		</motion.div>

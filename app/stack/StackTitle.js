@@ -15,7 +15,7 @@ export default function StackTitle() {
 	}
 
 	return (
-		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 mt-20 sm:mt-30 lg:mt-40"
+		<motion.div className="flex flex-col items-center justify-center w-full max-w-4xl h-max text-center px-4 sm:px-6 select-none pointer-events-none"
 		            variants={containerVariants}
 		            initial="hidden"
 		            whileInView="visible"

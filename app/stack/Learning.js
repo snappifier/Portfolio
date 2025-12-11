@@ -14,7 +14,7 @@ export default function Learning({element, onClick}) {
 			            transition={{duration: 0.5}}
 			>
 				<div className="w-8 sm:w-12 h-px bg-zinc-800" />
-				<span className="text-xs sm:text-sm text-zinc-500 tracking-[0.2em] uppercase">Learning</span>
+				<span className="text-xs sm:text-sm text-zinc-500 tracking-[0.2em] uppercase select-none">Learning</span>
 				<div className="w-8 sm:w-12 h-px bg-zinc-800" />
 			</motion.div>
 

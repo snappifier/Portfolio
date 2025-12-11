@@ -21,7 +21,7 @@ function LearningElement({element, onClick, delay = 0}) {
 			>
 				<Image src={element.icon} alt={element.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain group-hover:scale-120 transition-transform duration-500 select-none pointer-events-none"/>
 			</div>
-			<div className="flex-1 min-w-0">
+			<div className="flex-1 min-w-0 select-none">
 				<p className="text-sm sm:text-base text-white font-medium truncate">{element.name}</p>
 				<p className="text-xs sm:text-sm text-zinc-500 truncate">{element.description}</p>
 			</div>
@@ -37,11 +37,12 @@ function LearningElement({element, onClick, delay = 0}) {
 	if (element.hasDetails) {
 		return (
 			<motion.div className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-sm bg-zinc-900 cursor-pointer"
-				initial={{opacity: 0, y: 15}}
-				whileInView={{opacity: 1, y: 0}}
-				viewport={{once: true}}
-				transition={{type: 'spring', stiffness: 120, damping: 14, delay}}
-				onClick={handleClick}
+									initial={{opacity: 0, y: 15}}
+									whileInView={{opacity: 1, y: 0}}
+									viewport={{once: true}}
+									transition={{type: 'spring', stiffness: 120, damping: 14, delay: 0, opacity: {delay}, y: {delay}}}
+									onClick={handleClick}
+			            whileTap={{scale: 0.95}}
 			>
 				{content}
 			</motion.div>
@@ -50,13 +51,15 @@ function LearningElement({element, onClick, delay = 0}) {
 
 	return (
 		<motion.a className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-sm bg-zinc-900 cursor-pointer"
-			href={element.link || '#'}
-			target="_blank"
-			rel="noopener noreferrer"
-			initial={{opacity: 0, y: 15}}
-			whileInView={{opacity: 1, y: 0}}
-			viewport={{once: true}}
-			transition={{type: 'spring', stiffness: 120, damping: 14, delay}}
+							href={element.link || '#'}
+							target="_blank"
+							rel="noopener noreferrer"
+							initial={{opacity: 0, y: 15}}
+							whileInView={{opacity: 1, y: 0}}
+							viewport={{once: true}}
+							transition={{type: 'spring', stiffness: 120, damping: 14, delay: 0, opacity: {delay}, y: {delay}}}
+		          whileTap={{scale: 0.95}}
+
 		>
 			{content}
 		</motion.a>
