@@ -20,7 +20,7 @@ export default function Stack() {
 	}
 
 	return (
-		<div id="stack" className="relative flex flex-col items-center justify-center w-full h-max px-4 sm:px-6 lg:px-8 pb-20 sm:pb-30 overflow-hidden">
+		<div id="stack" className="relative flex flex-col items-center justify-center w-full h-max px-4 sm:px-6 lg:px-8 overflow-hidden">
 
 			<StackTitle />
 			<TechnologiesStagger tags={StackData} onShow={() => setIsStackOpened(true)} />

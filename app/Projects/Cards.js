@@ -53,11 +53,11 @@ const Cards = forwardRef(function Cards({project, priority = false}, ref) {
 							</div>
 
 							<div className="flex-1 flex items-center justify-center">
-								<div className="bg-zinc-900/80 rounded-md px-1.5 sm:px-2 py-0.5 sm:py-1 flex items-center gap-1 sm:gap-1.5 max-w-[100px] sm:max-w-[140px] md:max-w-[180px] lg:max-w-[200px] w-full">
+								<div className="bg-zinc-900/80 rounded-md px-1.5 sm:px-2 py-0.5 sm:py-1 flex items-center gap-1 sm:gap-1.5 min-w-[100px] sm:min-w-[140px] md:min-w-[180px] lg:min-w-[200px] w-max">
 									<svg className="w-2.5 sm:w-3 md:w-4 h-2.5 sm:h-3 md:h-4 text-zinc-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
 									</svg>
-									<span className="text-[8px] sm:text-[10px] md:text-xs text-zinc-400 truncate">
+									<span className="text-[8px] sm:text-[10px] md:text-xs text-zinc-400 truncate select-all">
 										{project.navbarText || "preview.dev"}
 									</span>
 								</div>

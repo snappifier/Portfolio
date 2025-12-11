@@ -11,7 +11,7 @@ function Info({project, isVisible, isMobile = false}) {
 	if (isMobile) return (
 		<AnimatePresence>
 			{isVisible && (
-				<motion.div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950  border-t border-zinc-800 p-4 sm:p-5 lg:hidden"
+				<motion.div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950  border-t border-zinc-800 p-4 sm:p-5 lg:hidden select-none"
 				            initial={{y: "100%", opacity: 0}}
 				            animate={{y: 0, opacity: 1}}
 				            exit={{y: "100%", opacity: 0}}
@@ -82,7 +82,7 @@ function Info({project, isVisible, isMobile = false}) {
 	)
 
 	return (
-		<div className="sticky top-1/4 mb-40 mt-30 h-max w-full flex items-center justify-center px-4 xl:px-8">
+		<div className="sticky top-1/4 mb-40 mt-30 h-max w-full flex items-center justify-center px-4 xl:px-8 select-none">
 				{isVisible && (
 				<motion.div className="flex flex-col items-start justify-center max-w-xl xl:max-w-2xl"
 				            key={project.id}
