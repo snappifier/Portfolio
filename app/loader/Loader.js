@@ -14,7 +14,7 @@ export default function Loader({onLoadingComplete}) {
 	const lenis = useLenis();
 
 	useEffect(() => {
-		const hasVisited = sessionStorage.getItem("hasVisited");
+		const hasVisited = localStorage.getItem("hasVisited");
 
 		if (window.innerWidth < 768) {
 			setBlocksAmount(5)
@@ -25,7 +25,7 @@ export default function Loader({onLoadingComplete}) {
 		if (!hasVisited) {
 			setShowLoader(true)
 			setIsVisible(true)
-			sessionStorage.setItem("hasVisited", "true");
+			localStorage.setItem("hasVisited", "true");
 
 		} else {
 			setShowLoader(false)
