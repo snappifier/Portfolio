@@ -24,7 +24,7 @@ export default function Stack() {
 
 			<StackTitle />
 			<TechnologiesStagger tags={StackData} onShow={() => setIsStackOpened(true)} />
-			<motion.div className="w-full max-w-xs sm:max-w-sm mx-auto h-0.5 my-16 sm:my-20 lg:my-24 rounded-full bg-linear-to-r from-transparent via-blue-400 to-transparent"
+			<motion.div className="w-full max-w-xs sm:max-w-md mx-auto h-0.5 my-16 sm:my-20 lg:my-24 rounded-full bg-linear-to-r from-cyan-400 via-blue-400 to-sky-400 "
 			            initial={{scaleX: 0, opacity: 0}}
 			            whileInView={{scaleX: 1, opacity: 1}}
 			            viewport={{once: true}}
