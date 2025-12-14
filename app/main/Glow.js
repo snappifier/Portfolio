@@ -22,7 +22,7 @@ export default function Glow({startAnimation}) {
 				<div className="absolute w-full h-full bg-linear-to-b from-zinc-950 from-0% via-transparent via-70% to-zinc-950 to-100% z-100 top-0 backdrop-saturate-150 pointer-events-none"/>
 			</div>
 		</motion.div>
-	<motion.div className="absolute bottom-8 sm:bottom-15 w-max h-max flex items-center justify-center text-slate-400 z-300"
+	<motion.div className="absolute bottom-8 sm:bottom-15 w-max h-max flex items-center justify-center text-slate-400 z-100"
 	            animate={{y: [0, 10]}}
 	            transition={{duration: 1, ease: "easeInOut", repeat: Infinity, repeatType: "mirror"}}
 	>
