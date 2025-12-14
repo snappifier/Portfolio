@@ -107,10 +107,10 @@ export default function Button({text ,bgColor, glowColor, textColor, onClick, st
 		     ref={containerRef}
 		     onMouseMove={handleMouseMove}
 		     onMouseLeave={handleMouseLeave}>
-			<div ref={buttonRef} className="relative rounded-full overflow-hidden">
+			<motion.div whileTap={{scale: 0.95}} ref={buttonRef} className="relative rounded-full overflow-hidden">
 				<div className="absolute inset-0">
 					<motion.div
-						className={`absolute w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-gradient-to-r ${glowColor} blur-[15px] sm:blur-[20px] rounded-full`}
+						className={`absolute w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-linear-to-r ${glowColor} blur-[15px] sm:blur-[20px] rounded-full`}
 						style={{
 							x: x,
 							y: y,
@@ -121,10 +121,10 @@ export default function Button({text ,bgColor, glowColor, textColor, onClick, st
 						transition={{opacity: {duration: 0.3}}}
 					/>
 				</div>
-				<div className={`relative ${bgColor} flex items-center justify-center px-6 py-2 sm:px-8 sm:py-2.5 lg:px-12 lg:py-3 m-[2px] rounded-full z-10 transition colors duration-300 cursor-pointer`} onClick={onClick} style={{WebkitTapHighlightColor: "transparent"}}>
+				<div className={`relative ${bgColor} flex items-center justify-center px-6 py-2 sm:px-8 sm:py-2.5 lg:px-12 lg:py-3 m-0.5 rounded-full z-10 transition colors duration-300 cursor-pointer`} onClick={onClick} style={{WebkitTapHighlightColor: "transparent"}}>
 					<span className={`${textColor} font-medium tracking-wide text-xs sm:text-sm select-none whitespace-nowrap`}>{text}</span>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }

@@ -34,7 +34,7 @@ export const projects = [
 		description: "A modern platform built to serve the school community. It combines a fast interface for students with an intuitive CMS, allowing the staff to easily manage news, galleries, and schedules.",
 		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
 		image: projectImages.highschool,
-		color: "bg-gradient-to-r from-blue-600 to-cyan-600",
+		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
 		navbarText: "1lo.com.pl",
 		linkLive: "#",
 		linkRepo: "#"
@@ -45,7 +45,7 @@ export const projects = [
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
 		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
 		image: projectImages.portfolio,
-		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
+		color: "bg-gradient-to-r from-blue-600 to-cyan-600",
 		navbarText: "krystianmatwiej.vercel.app",
 		linkLive: "#",
 		linkRepo: "#"
@@ -175,9 +175,6 @@ export const learningData = [
 			{name: "CyberFlow", link: "https://www.youtube.com/@cyberflow10" },
 		]
 	},
-
-
-
 ]
 
 export const testData = [
