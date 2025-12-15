@@ -39,7 +39,7 @@ export default function AboutContent() {
 							<div className="absolute -inset-4 bg-linear-to-br from-blue-600/40 to-cyan-500/40 rounded-3xl blur-xl sm:blur-2xl opacity-60" />
 
 							<div className="relative w-full h-full rounded-2xl overflow-hidden bg-zinc-900/50 border border-zinc-700/30 shadow-2xl backdrop-blur-sm group">
-								<Image src="/photo.jpg" alt="Photo" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" priority={true} />
+								<Image src="/photo.jpg" alt="Photo" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105 select-none" sizes="(max-width: 768px) 100vw, 33vw" priority={true} />
 								<div className="absolute inset-0 bg-linear-to-t from-zinc-950/50 via-transparent tp-transparent opacity-80" />
 							</div>
 						</motion.div>
