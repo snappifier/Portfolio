@@ -153,7 +153,7 @@ export default function ContactButton() {
 																	whileTap={{scale: 0.98}}
 																	transition={{ duration: 0.1 }}
 											>
-												<div className="absolute top-4 right-4 text-zinc-500 group-hover:text-white transition-all duration-500 ease-out group-hover:rotate-45">
+												<div className="hidden sm:block absolute top-4 right-4 text-zinc-500 group-hover:text-white transition-all duration-500 ease-out group-hover:rotate-45">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
 												</div>
 
@@ -200,9 +200,19 @@ export default function ContactButton() {
 
 	return (
 		<>
-			<div className="px-6 py-2 rounded-full border cursor-pointer select-none" onClick={() => setIsOpen(true)}>
-				Get in touch
-			</div>
+			<motion.button
+				onClick={() => setIsOpen(true)}
+				whileTap={{ scale: 0.95 }}
+				transition={{ duration: 0.1 }}
+
+				className={`group relative inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full transition-colors duration-400 border border-white/20 hover:border-white  `}
+			>
+				<span className="text-base font-medium tracking-wide text-white">
+            Get in touch
+        </span>
+				<svg className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width={15} height={15} viewBox="0 0 512 512"><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2"></path></svg>
+			</motion.button>
+
 			{mounted && createPortal(modalContent, document.body)}
 		</>
 	)
