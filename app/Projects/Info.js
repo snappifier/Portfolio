@@ -60,9 +60,12 @@ function Info({project, isVisible, isMobile = false}) {
 							            animate={{opacity: 1, y: 0}}
 							            transition={{duration: 0.5, delay: 0.4, ease: "easeOut"}}
 							>
+								{project.linkLive && (
 								<motion.a whileTap={{scale: 0.9}} href={project.linkLive} target="_blank" className="flex items-center justify-center cursor-pointer select-none">
 									<p className="text-sm text-white tracking-wide">See Live</p>
 								</motion.a>
+									)}
+								{project.linkRepo && (
 								<motion.a whileTap={{scale: 0.9}} href={project.linkRepo} target="_blank" className="flex items-center justify-center gap-1.5 rounded-sm cursor-pointer select-none bg-zinc-800 text-white px-3 py-1.5">
 									<svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24">
 										<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
@@ -72,6 +75,7 @@ function Info({project, isVisible, isMobile = false}) {
 									</svg>
 									<p className="text-xs sm:text-sm">Source</p>
 								</motion.a>
+									)}
 
 							</motion.div>
 						</motion.div>
