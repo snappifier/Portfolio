@@ -1,25 +1,37 @@
 export const badges = {
 	next: {name: "Next.js", icon: "/nextjs_logo.svg"},
-	tailwind: {name: "Tailwind CSS", icon: "/tailwind_logo.svg"},
 	react: {name: "React", icon: "/react_logo.svg"},
-	strapi: {name: "Strapi", icon: "/strapi_logo.svg"},
 	motion: {name: "Motion.dev", icon: "/motion_logo.svg"},
-	railway: {name: "Railway", icon: "/railway_logo.svg"},
-	vercel: {name: "Vercel", icon: "/vercel_logo.svg"},
-	figma: {name: "Figma", icon: "/figma_logo.svg"},
+	tailwind: {name: "Tailwind CSS", icon: "/tailwind_logo.svg"},
 	vite: {name: "Vite", icon: "/vite_logo.svg"},
-	postgres: {name: "Postgresql", icon: "/postgresql_logo.png"},
-	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
-	pagespeed: {name: "Pagespeed Insights", icon: "/pagespeed_logo.svg"},
 	javascript: {name: "JavaScript", icon: "/js_logo.png"},
 	css: {name: "CSS", icon: "/css_logo.png"},
 	html: {name: "HTML", icon: "/html_logo.png"},
 	lenis: {name: "Lenis", icon: "/lenis_logo.png"},
+
+	vercel: {name: "Vercel", icon: "/vercel_logo.svg"},
+	medusajs: {name: "MedusaJS", icon: "/medusajs_logo.svg"},
+	railway: {name: "Railway", icon: "/railway_logo.svg"},
+	strapi: {name: "Strapi", icon: "/strapi_logo.svg"},
+	resend: {name: "Resend", icon: "/resend_logo.jpeg"},
+	stripe: {name: "Stripe", icon: "/stripe_logo.jpeg"},
+
+	prisma: {name: "Prisma", icon: "/prisma_logo.svg"},
+	postgres: {name: "Postgresql", icon: "/postgresql_logo.png"},
+
+	shadcn: {name: "Shadcn", icon: "/shadcn_logo.svg"},
+	baseui: {name: "Base UI", icon: "/baseui_logo.svg"},
+
+	pagespeed: {name: "Pagespeed Insights", icon: "/pagespeed_logo.svg"},
+	figma: {name: "Figma", icon: "/figma_logo.svg"},
 	webstorm: {name: "Webstorm", icon: "/webstorm_logo.svg"},
 	github: {name: "GitHub", icon: "/github_logo.svg"},
+
 	hyperskill: {name: "Hyperskill", icon: "/hyperskill_logo.png"},
 	youtube: {name: "YouTube", icon: "/youtube_logo.svg"},
-	tryhackme: {name: "TryHackMe", icon: "/tryhackme_logo.svg"}
+	tryhackme: {name: "TryHackMe", icon: "/tryhackme_logo.svg"},
+
+	python: {name: "Python", icon: "/python_logo.svg"},
 }
 const projectImages = {
 	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1563, height: 4041},
@@ -35,31 +47,28 @@ export const projects = [
 		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
 		image: projectImages.highschool,
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
-		navbarText: "1lo.com.pl",
-		linkLive: "#",
-		linkRepo: "#"
+		navbarText: "next-lo-ten.vercel.app",
+		linkLive: "https://next-lo-ten.vercel.app/",
+		linkRepo: "https://github.com/snappifier/NextLo"
 	},
 	{
 		id: 2,
 		title: "MY PORTFOLIO",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
+		description: "An interactive personal website showcasing my skills, work and expertise",
+		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.lenis, badges.resend],
 		image: projectImages.portfolio,
 		color: "bg-gradient-to-r from-blue-600 to-cyan-600",
-		navbarText: "krystianmatwiej.vercel.app",
-		linkLive: "#",
-		linkRepo: "#"
+		navbarText: "krystianmatwiej.pl",
+		linkRepo: "https://github.com/snappifier/Portfolio"
 	},
 	{
 		id: 3,
-		title: "THIRD PROJECT",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, tortor quis tincidunt consequat, metus odio tincidunt sapien.",
-		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
+		title: "LITEAROMA ECOMMERCE PLATFORM",
+		description: "A specialized modern e-commerce platform for fragrance lovers.",
+		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.medusajs, badges.stripe],
 		image: projectImages.third,
 		color: "bg-gradient-to-r from-purple-500 to-pink-500",
-		navbarText: "thirdproject.com",
-		linkLive: "#",
-		linkRepo: "#"
+		navbarText: "litearoma.com",
 	}
 ];
 
@@ -73,7 +82,9 @@ export const StackData = [
 	{...badges.github, description: "Version control", color: "#ffffff", darkText: true},
 	{...badges.webstorm, description: "IDE", color: "#00cdd7", darkText: true},
 	{...badges.javascript, description: "Programming language", color: "#f7df1e", darkText: true},
+	{...badges.prisma, description: "ORM", color: "#3d44b5", darkText: true},
 	{...badges.postgres, description: "Database", color: "#336791"},
+	{...badges.shadcn, description: "React UI library", color: "#ffffff", darkText: true},
 	{...badges.baseui, description: "React UI library", color: "#ffffff", darkText: true},
 	{...badges.html, description: "Markup language", color: "#e34f26"},
 	{...badges.css, description: "Stylesheet language", color: "#1572b6"},
@@ -82,6 +93,11 @@ export const StackData = [
 	{...badges.pagespeed, description: "Website performance tool", color: "#4285f4"},
 	{...badges.strapi, description: "Headless CMS", color: "#4945ff"},
 	{...badges.lenis, description: "Design tool", color: "#ff906e", darkText: true},
+	{...badges.resend, description: "Email verification tool", color: "#ffffff", darkText: true},
+	{...badges.medusajs, description: "Headless e-commerce platform", color: "#ffffff", darkText: true},
+	{...badges.stripe, description: "Payment gateway", color: "#ffffff", darkText: true},
+	{...badges.python, description: "Programming language", color: "#3776ab"},
+
 ]
 
 export const learningData = [

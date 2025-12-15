@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <path fill="#FFFFFF" fill-rule="evenodd" 
+        d="M50 5 
+           L93.3 30 
+           L93.3 70 
+           L50 95 
+           L6.7 70 
+           L6.7 30 
+           Z 
+           M50 35 
+           a15 15 0 1 0 0 30 
+           a15 15 0 1 0 0 -30" />
+</svg>

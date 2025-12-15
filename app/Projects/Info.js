@@ -60,10 +60,10 @@ function Info({project, isVisible, isMobile = false}) {
 							            animate={{opacity: 1, y: 0}}
 							            transition={{duration: 0.5, delay: 0.4, ease: "easeOut"}}
 							>
-								<div className="flex items-center justify-center cursor-pointer select-none">
+								<motion.a whileTap={{scale: 0.9}} href={project.linkLive} target="_blank" className="flex items-center justify-center cursor-pointer select-none">
 									<p className="text-sm text-white tracking-wide">See Live</p>
-								</div>
-								<div className="flex items-center justify-center gap-1.5 rounded-sm cursor-pointer select-none bg-zinc-800 text-white px-3 py-1.5">
+								</motion.a>
+								<motion.a whileTap={{scale: 0.9}} href={project.linkRepo} target="_blank" className="flex items-center justify-center gap-1.5 rounded-sm cursor-pointer select-none bg-zinc-800 text-white px-3 py-1.5">
 									<svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24">
 										<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
 											<path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.4 13.4 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"/>
@@ -71,7 +71,7 @@ function Info({project, isVisible, isMobile = false}) {
 										</g>
 									</svg>
 									<p className="text-xs sm:text-sm">Source</p>
-								</div>
+								</motion.a>
 
 							</motion.div>
 						</motion.div>
@@ -111,14 +111,17 @@ function Info({project, isVisible, isMobile = false}) {
 					            animate={{opacity: 1, y: 0}}
 					            transition={{duration: 0.7, delay: 1.3, ease: "easeOut"}}
 					>
-
-						<div className={`flex items-center justify-center cursor-pointer select-none`}>
-							<p className="text-sm md:text-base text-white tracking-wide">See Live</p>
-						</div>
-						<div className="flex items-center justify-center gap-2 rounded-sm cursor-pointer select-none bg-zinc-800 text-white  px-3 py-1.5 md:px-4 md:py-2 ">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}><path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.4 13.4 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"></path><path d="M9 20.027c-3 .973-5.5 0-7-3"></path></g></svg>
+						{project.linkLive && (
+						<motion.div whileTap={{scale: 0.9}} className={`flex items-center justify-center cursor-pointer select-none`}>
+							<a href={project.linkLive} target="_blank" rel="noreferrer" className="text-sm md:text-base text-white tracking-wide">See Live</a>
+						</motion.div>
+							)}
+						{project.linkRepo && (
+						<motion.a whileTap={{scale: 0.9}} href={project.linkRepo} target="_blank" className="group flex items-center justify-center gap-2 rounded-sm cursor-pointer select-none bg-zinc-800 text-white  px-3 py-1.5 md:px-4 md:py-2 ">
+							<svg className="group-hover:scale-110 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}><path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.4 13.4 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"></path><path d="M9 20.027c-3 .973-5.5 0-7-3"></path></g></svg>
 							<p className="text-sm md:text-base">Source Code</p>
-						</div>
+						</motion.a>
+							)}
 					</motion.div>
 				</motion.div>
 					)}
