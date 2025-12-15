@@ -24,7 +24,9 @@ export default function AboutContent() {
 
 							<div className="pt-2 w-full flex flex-col items-center lg:items-start">
 								<AnimateText as="p" type="lines" className="text-zinc-300 mb-6" duration={2} bounce={0.3} staggerD={0.1} delay={0.5} trigger={isInView}>Wanna work together? Feel free to contact me</AnimateText>
-								<ContactButton />
+								<motion.div initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 0.8, delay: 0.7, ease: [0.2, 0.65, 0.3, 0.9]}}>
+									<ContactButton />
+								</motion.div>
 							</div>
 
 						</div>
