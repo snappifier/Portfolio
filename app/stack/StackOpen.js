@@ -75,7 +75,7 @@ export default function StackOpen({tags, isOpen, onClose}) {
 
 											</div>
 											<div className="min-w-0">
-												<p className="text-sm text-white font-medium truncate">{tag.name}</p>
+												<p className="text-sm text-white font-medium truncate select-all">{tag.name}</p>
 												<p className="text-xs text-zinc-500 truncate">{tag.description}</p>
 											</div>
 										</motion.div>
