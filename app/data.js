@@ -150,15 +150,15 @@ export const learningData = [
 		hasDetails: false,
 		link: "https://nextjs.org/docs"
 	},
-	{
-		id: "react-docs",
-		name: "React Docs",
-		icon: badges.react.icon,
-		color: "#61dafb",
-		description: "Official documentation",
-		hasDetails: false,
-		link: "https://react.dev"
-	},
+	// {
+	// 	id: "react-docs",
+	// 	name: "React Docs",
+	// 	icon: badges.react.icon,
+	// 	color: "#61dafb",
+	// 	description: "Official documentation",
+	// 	hasDetails: false,
+	// 	link: "https://react.dev"
+	// },
 	{
 		id: "tailwind-docs",
 		name: "Tailwind CSS Docs",
@@ -189,6 +189,17 @@ export const learningData = [
 			{name: "Fireship", link: "https://www.youtube.com/@Fireship"},
 			{name: "The Coding Sloth", link: "https://www.youtube.com/@TheCodingSloth" },
 			{name: "CyberFlow", link: "https://www.youtube.com/@cyberflow10" },
+		]
+	},
+	{
+		id: "react-native",
+		name: "React Native",
+		icon: badges.react.icon,
+		color: "#61dafb",
+		description: "Udemy react native course",
+		hasDetails: true,
+		certificates: [
+			{name: "React Native Guide", date: "in progress"}
 		]
 	},
 ]
