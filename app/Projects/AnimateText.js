@@ -42,7 +42,7 @@ const AnimateText = ({ children, className, as: Tag = "div", type = "char", dela
 	}, [delay, duration, bounce, staggerD, type, children, trigger])
 
 	return (
-		<Tag ref={ref} className={className} style={{visibility: 'hidden'}}>{children}</Tag>
+		<Tag ref={ref} className={className} style={{visibility: 'hidden', content: "layout paint", willChange: "opacity, transform"}}>{children}</Tag>
 	)
 }
 
