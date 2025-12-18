@@ -16,12 +16,12 @@ export default function Glow({startAnimation}) {
                         initial={{opacity: 0}}
                         animate={{opacity: startAnimation ? 1 : 0}}
                         transition={{duration: 3, ease: "easeOut"}}
-                        style={{willChange: "opacity", contail: "layout style paint"}}
+                        style={{willChange: "opacity", contain: "layout style paint"}}
             >
                 <div className="w-full h-full flex items-center justify-center">
-                    <div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)]  " style={{transform: "translateZ(0)", backfaceVisibility: "hidden", webBackfaceVisibility: "hidden"}}/>
-                    <div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)] scale-x-[-1]" style={{transform: " translateZ(0)", backfaceVisibility: "hidden", webBackfaceVisibility: "hidden"}}/>
-                    <div className="absolute w-full h-full bg-linear-to-b from-zinc-950 from-0% via-transparent via-70% to-zinc-950 to-100% z-100 top-0 backdrop-saturate-150 pointer-events-none" style={{transform: "translateZ(0)", backfaceVisibility: "hidden", webBackfaceVisibility: "hidden"}}/>
+                    <div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)]  " style={{transform: "translateZ(0)", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden"}}/>
+                    <div className="h-full w-1/2 bg-[conic-gradient(from_90deg_at_50%_70%,_#F8F8F8_0%,_#000_0%,#09090b_10%,_#0ea5e9_96%,_#75d4ff_99%)] scale-x-[-1]" style={{transform: " translateZ(0)", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden"}}/>
+                    <div className="absolute w-full h-full bg-linear-to-b from-zinc-950 from-0% via-transparent via-70% to-zinc-950 to-100% z-100 top-0 backdrop-saturate-150 pointer-events-none" style={{transform: "translateZ(0)", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden"}}/>
                 </div>
             </motion.div>
             <motion.div className="absolute bottom-8 sm:bottom-15 w-max h-max flex items-center justify-center text-slate-400 z-100"
