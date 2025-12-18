@@ -4,7 +4,7 @@ import Title from "@/app/main/Title";
 export default function Main({startAnimation}) {
 
 	return (<>
-			<div className="w-full h-svh min-h-[500px] sm:min-h-[600px] flex items-center justify-center bg-zinc-950 overflow-hidden">
+			<div className="w-full h-svh min-h-[500px] sm:min-h-[600px] flex items-center justify-center bg-zinc-950 overflow-hidden" style={{contain: "layout style paint", contentVisibility: "auto"}}>
 				<Title startAnimation={startAnimation}/>
 				<Glow startAnimation={startAnimation}/>
 			</div>
