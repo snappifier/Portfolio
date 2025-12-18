@@ -32,7 +32,7 @@ function Info({project, isVisible, isMobile = false}) {
 							            transition={{duration: 0.4, delay: 0.25}}
 							>
 								<div className="flex gap-1.5 pb-1">
-									{project.tags.slice(0, 6).map((tag, index) => (
+									{project.tags.map((tag, index) => (
 										<motion.div className="flex items-center gap-1 px-2 py-1 rounded-sm bg-zinc-800 text-white text-xs whitespace-nowrap shrink-0"
 										            key={tag.name}
 										            initial={{opacity: 0, scale: 0.8}}
@@ -43,15 +43,6 @@ function Info({project, isVisible, isMobile = false}) {
 											<span>{tag.name}</span>
 										</motion.div>
 									))}
-									{project.tags.length > 6 && (
-										<motion.div className="flex items-center px-2 py-1 rounded-sm bg-zinc-800/50 text-zinc-400 text-xs whitespace-nowrap shrink-0"
-										            initial={{opacity: 0}}
-										            animate={{opacity: 1}}
-										            transition={{duration: 0.3, delay: 0.5}}
-										>
-										+{project.tags.length - 6}
-										</motion.div>
-									)}
 								</div>
 							</motion.div>
 
