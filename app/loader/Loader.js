@@ -39,14 +39,40 @@ export default function Loader({onLoadingComplete}) {
 		if (showLoader) {
 			if (lenis) lenis.stop()
 
-			document.body.style.setProperty("overflow", "hidden", "important")
-			document.documentElement.style.setProperty("overflow", "hidden", "important")
-		} else {
-			if (lenis) lenis.start()
-			document.body.style.removeProperty("overflow")
-			document.documentElement.style.removeProperty("overflow")
-		}
-	}, [showLoader, lenis])
+            window.scrollTo(0, 0)
+
+            document.body.style.position = 'fixed'
+            document.body.style.top = '0'
+            document.body.style.left = '0'
+            document.body.style.right = '0'
+            document.body.style.overflow = 'hidden'
+            document.documentElement.style.overflow = 'hidden'
+        } else {
+            document.body.style.position = ''
+            document.body.style.top = ''
+            document.body.style.left = ''
+            document.body.style.right = ''
+            document.body.style.overflow = ''
+            document.documentElement.style.overflow = ''
+
+            if (lenis) {
+                lenis.start()
+                lenis.scrollTo(0, { immediate: true, force: true })
+            } else {
+                window.scrollTo(0, 0)
+            }
+        }
+
+        return () => {
+            document.body.style.position = ''
+            document.body.style.top = ''
+            document.body.style.left = ''
+            document.body.style.right = ''
+            document.body.style.overflow = ''
+            document.documentElement.style.overflow = ''
+            if (lenis) lenis.start()
+        }
+    }, [showLoader, lenis])
 
 
 	const variants = {

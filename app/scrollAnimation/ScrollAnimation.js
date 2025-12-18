@@ -1,14 +1,20 @@
 "use client"
 
-import {motion, useScroll, animate, useTransform } from "motion/react"
+import {motion, useMotionValue, useTransform } from "motion/react"
 import {useEffect, useRef} from "react"
 import {useLenis} from "lenis/react";
 
 export default function ScrollAnimation() {
-	const { scrollYProgress } = useScroll()
-	const ref = useRef(null)
-	const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-	const lenis = useLenis()
+    const scrollProgress = useMotionValue(0);
+
+    const width = useTransform(scrollProgress, [0, 1], ["0%", "100%"])
+
+    const ref = useRef(null)
+
+    const lenis = useLenis(({scroll, limit}) => {
+        const progress = limit > 0 ? scroll / limit : 0;
+        scrollProgress.set(progress);
+    })
 
 	const handleClick = (e) => {
 		const progress = ref.current

@@ -11,7 +11,7 @@
 html[data-lenis],
 html,
 body {
-    overflow: visible !important;
+    overflow: visible;
 }
 
 [data-lenis-prevent] {
