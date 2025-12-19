@@ -53,13 +53,13 @@ export default function LearningOpen({element, isOpen, onClose}) {
 		<AnimatePresence>
 			{isOpen && (
 				<>
-					<motion.div className="fixed inset-0 bg-zinc-950/90 backdrop-blur-sm z-50"
+					<motion.div className="fixed inset-0 bg-zinc-950/90 backdrop-blur-sm z-900"
 											initial={{ opacity: 0 }}
 											animate={{ opacity: 1 }}
 											exit={{ opacity: 0, pointerEvents: 'none' }}
 											onClick={onClose}
 					/>
-					<motion.div className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto z-50"
+					<motion.div className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto z-999"
 											initial={{opacity: 0, y: 20, scale: 0.95}}
 											animate={{opacity: 1, y: 0, scale: 1}}
 											exit={{opacity: 0, y: 20, scale: 0.95, pointerEvents: 'none'}}
