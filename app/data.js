@@ -47,8 +47,8 @@ export const projects = [
 		tags: [badges.next, badges.react, badges.javascript, badges.tailwind, badges.motion, badges.vercel, badges.railway, badges.strapi, badges.postgres],
 		image: projectImages.highschool,
 		color: "bg-gradient-to-r from-blue-500 to-cyan-500",
-		navbarText: "next-lo-ten.vercel.app",
-		linkLive: "https://next-lo-ten.vercel.app/",
+		navbarText: "new.1lo.com.pl",
+		linkLive: "https://new.1lo.com.pl/",
 		linkRepo: "https://github.com/snappifier/NextLo"
 	},
 	{
