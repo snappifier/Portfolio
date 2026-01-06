@@ -32,6 +32,7 @@ export const badges = {
 	tryhackme: {name: "TryHackMe", icon: "/tryhackme_logo.svg"},
 
 	python: {name: "Python", icon: "/python_logo.svg"},
+	typescript: {name: "TypeScript", icon: "/typescript_logo.svg"},
 }
 const projectImages = {
 	highschool: {alt: "1 Liceum Ogólnokształcące im. Jana Zamoyskiego w Zamościu", src: "/ss_lo2.png", width: 1563, height: 4041},
@@ -201,6 +202,17 @@ export const learningData = [
 		certificates: [
 			{name: "React Native Guide", date: "in progress"}
 		]
+	},
+	{
+		id: "typescript-tutorial",
+		name: "learn-typescript.online",
+		icon: badges.typescript.icon,
+		color: "#007acc",
+		description: "TypeScript course",
+		hasDetails: true,
+		certificates: [
+			{name: "Certificate of completion", date: "in progress"}
+		],
 	},
 ]
 
