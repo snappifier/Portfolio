@@ -4,14 +4,22 @@ import {motion, AnimatePresence} from "motion/react";
 
 export default function Card({title, subtitle, icon, onClick, isCopied}) {
 
+	const handleKeyDown = (e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			onClick();
+		}
+	}
+
 	return (
-		<motion.div className="bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 p-4 rounded-xl cursor-pointer transition-colors duration-300 flex flex-col justify-between gap-3 group relative overflow-hidden"
+		<motion.div className="bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 focus-visible:bg-zinc-700 hover:border-zinc-600 focus-visible:border-zinc-600 p-4 rounded-xl cursor-pointer transition-colors duration-300 flex flex-col justify-between gap-3 group relative overflow-hidden"
 		            onClick={onClick}
 		            whileTap={{scale: 0.95}}
 		            transition={{duration: 0.1}}
+					onKeyDown={handleKeyDown}
 		>
 			<div className="flex items-start justify-between">
-				<div className="text-zinc-400 group-hover:text-white transition-colors duration-300 relative w-6 h-6">
+				<div className="text-zinc-400 group-hover:text-white group-focus:text-white transition-colors duration-300 relative w-6 h-6">
 					<AnimatePresence initial={false}>
 						{isCopied ? (
 							<motion.div className="absolute inset-0 text-green-400"
@@ -21,9 +29,7 @@ export default function Card({title, subtitle, icon, onClick, isCopied}) {
 							            exit={{scale: 0.5, opacity: 0}}
 							            transition={{type: 'spring', stiffness: 500, damping: 25}}
 							>
-								<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-									<polyline points="20 6 9 17 4 12"/>
-								</svg>
+								<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 							</motion.div>
 						) : (
 							<motion.div className="absolute inset-0"
