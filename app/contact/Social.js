@@ -19,16 +19,17 @@ export default function Social({id, href, icon, activeSocial, onClick}) {
 				)}
 			</AnimatePresence>
 
-			<a className={`text-zinc-600 hover:text-white transition-colors duration-300 cursor-pointer`}
-			   href={href || '#'}
-			   target={href ? "_blank" : undefined}
-			   rel="noreferrer"
-			   onClick={(e) => onClick(e, id, href)}
+			<motion.a className={`text-zinc-600 hover:text-white focus-visible:text-white transition-colors duration-300 cursor-pointer`}
+					  href={href || '#'}
+					  target={href ? "_blank" : undefined}
+					  rel="noreferrer"
+					  onClick={(e) => onClick(e, id, href)}
+					  whileTap={{scale: 0.9}}
 			>
-				<motion.div whileTap={{scale: 0.9}}>
+				<motion.div >
 					{icon}
 				</motion.div>
-			</a>
+			</motion.a>
 		</div>
 	)
 }
