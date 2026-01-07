@@ -10,7 +10,31 @@ export default function Title({startAnimation}) {
 	const lenis = useLenis()
 
 	const handleScroll = () => {
-		lenis?.scrollTo('#projects', {duration: 1.5, easing: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3)/2})
+		lenis?.scrollTo('#projects', {
+			duration: 1.5,
+			easing: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3)/2,
+			onComplete: () => {
+				const cleanup = () => {
+					document.removeEventListener('keydown', handleNextTab)
+					document.removeEventListener('mousedown', cleanup)
+					document.removeEventListener('touchstart', cleanup)
+				}
+
+				const handleNextTab = (e) => {
+					if (e.key === 'Tab' && !e.shiftKey) {
+						e.preventDefault()
+						const firstLink = document.querySelector('#projects a[href]')
+						firstLink?.focus()
+					}
+					cleanup()
+				}
+
+				document.addEventListener('keydown', handleNextTab)
+				document.addEventListener('mousedown', cleanup)
+				document.addEventListener('touchstart', cleanup)
+			}
+		})
+
 	}
 
 	const containerVariants = {

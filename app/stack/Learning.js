@@ -18,7 +18,7 @@ export default function Learning({element, onClick}) {
 				<div className="w-8 sm:w-12 h-px bg-zinc-800" />
 			</motion.div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+			<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pb-1">
 				{element.map((el, index) => (
 					<LearningElement key={el.id} element={el} onClick={onClick} delay={index * 0.08} />
 				))}

@@ -220,7 +220,7 @@ export default function ContactButton() {
 													exit={{opacity: 0, x: 20}}
 													transition={{duration: 0.25, ease: "easeInOut"}}
 										>
-											<motion.div className="relative w-full p-6 rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 focus-visible:bg-zinc-700 hover:border-zinc-600 focus-visible:border-zinc-600 cursor-pointer group overflow-hidden transition-colors duration-300"
+											<motion.div className="relative w-full p-6 rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 focus-visible:bg-zinc-700 hover:border-zinc-600 focus-visible:border-zinc-600 cursor-pointer group overflow-hidden transition-colors duration-300 "
 														onClick={() => setShowForm(true)}
 														whileTap={{scale: 0.98}}
 														animate={pressedKey === 'conversation' ? {scale: 0.98} : {scale: 1}}

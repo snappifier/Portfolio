@@ -27,3 +27,15 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none;
 }
+
+@layer base {
+    button,
+    a,
+    input,
+    textarea,
+    select,
+    [tabindex]:not([tabindex="-1"]),
+    [role="button"] {
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-white;
+    }
+}

@@ -19,7 +19,7 @@ function LearningElement({element, onClick, delay = 0}) {
 			<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center shrink-0 overflow-hidden transition-all duration-300"
 			     style={{backgroundColor: `${color}15`}}
 			>
-				<Image src={element.icon} alt={element.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain group-hover:scale-120 transition-transform duration-500 select-none pointer-events-none"/>
+				<Image src={element.icon} alt={element.name} width={32} height={32} className="w-6 h-6 sm:w-7 sm:h-7 object-contain group-hover:scale-120 group-focus-visible:scale-120 transition-transform duration-500 select-none pointer-events-none"/>
 			</div>
 			<div className="flex-1 min-w-0 select-none">
 				<p className="text-sm sm:text-base text-white font-medium truncate">{element.name}</p>
@@ -27,9 +27,9 @@ function LearningElement({element, onClick, delay = 0}) {
 			</div>
 
 			{element.hasDetails ? (
-				<svg className="w-4 h-4 text-zinc-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+				<svg className="w-4 h-4 text-zinc-600 group-hover:text-cyan-400 group-focus-visible:text-cyan-400 group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-all duration-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
 			) : (
-				<svg className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 group-hover:-translate-y-1 transition-all duration-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+				<svg className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 group-focus-visible:text-zinc-400 group-hover:-translate-y-1 group-focus-visible:-translate-y-1 transition-all duration-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
 			)}
 		</>
 	)
@@ -43,6 +43,13 @@ function LearningElement({element, onClick, delay = 0}) {
 									transition={{type: 'spring', stiffness: 120, damping: 14, delay: 0, opacity: {delay}, y: {delay}}}
 									onClick={handleClick}
 			            whileTap={{scale: 0.95}}
+			            role="button"
+			            onKeyDown={(e) => {
+										if (e.key === 'Enter' || e.key === ' ') {
+												e.preventDefault();
+			                  handleClick();
+										}
+			            }}
 			>
 				{content}
 			</motion.div>

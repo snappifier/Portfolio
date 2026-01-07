@@ -2,15 +2,18 @@
 
 import {motion, AnimatePresence} from "motion/react";
 import Image from "next/image";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {useLenis, ReactLenis} from "lenis/react";
 
 export default function StackOpen({tags, isOpen, onClose}) {
 
 	const lenis = useLenis()
+	const modalRef = useRef(null)
+	const previousActiveElement = useRef(null)
 
 	useEffect(() => {
 		if (isOpen) {
+			previousActiveElement.current = document.activeElement
 			lenis?.stop()
 			document.body.style.setProperty('overflow', 'hidden', 'important');
 			document.documentElement.style.setProperty('overflow', 'hidden', 'important');
@@ -28,6 +31,56 @@ export default function StackOpen({tags, isOpen, onClose}) {
 		}
 	}, [isOpen, lenis])
 
+	useEffect(() => {
+		if (!isOpen) return
+
+		const handleKeyDown = (e) => {
+			if (e.key === 'Escape') {
+				onClose()
+				return
+			}
+
+			if (e.key !== 'Tab') return
+
+			const focusableElements = modalRef.current?.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+
+			if (!focusableElements || focusableElements.length === 0) return
+
+			const firstElement = focusableElements[0]
+			const lastElement = focusableElements[focusableElements.length - 1]
+			const isInsideModal = modalRef.current?.contains(document.activeElement)
+
+			if (!isInsideModal) {
+				e.preventDefault()
+				if (e.shiftKey) {
+					lastElement?.focus()
+				} else {
+					firstElement?.focus()
+				}
+				return
+			}
+
+			if (e.shiftKey) {
+				if (document.activeElement === firstElement) {
+					e.preventDefault()
+					lastElement?.focus()
+				}
+			} else {
+				if (document.activeElement === lastElement) {
+					e.preventDefault()
+					firstElement?.focus()
+				}
+			}
+		}
+
+		document.addEventListener('keydown', handleKeyDown)
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown)
+			previousActiveElement.current?.focus()
+		}
+	}, [isOpen, onClose])
+
 
 	return (
 		<AnimatePresence>
@@ -41,6 +94,7 @@ export default function StackOpen({tags, isOpen, onClose}) {
 					/>
 
 					<motion.div className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-2xl mx-auto z-999"
+					            ref={modalRef}
 					            initial={{opacity: 0, y: 20, scale: 0.95}}
 					            animate={{opacity: 1, y: 0, scale: 1}}
 					            exit={{opacity: 0, y: 20, scale: 0.95}}
@@ -52,7 +106,7 @@ export default function StackOpen({tags, isOpen, onClose}) {
 									<h3 className="text-base sm:text-lg font-bold text-white select-none pointer-events-none">All Technologies</h3>
 									<p className="text-xs sm:text-sm text-zinc-500 select-none pointer-events-none">{tags.length} technologies & tools</p>
 								</div>
-								<motion.button whileTap={{scale: 0.9}} onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer">
+								<motion.button whileTap={{scale: 0.9}} onClick={onClose} className="p-2 text-zinc-500 hover:text-white transition-colors duration-400 cursor-pointer rounded-full focus-visible:text-white">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 								</motion.button>
 							</div>
