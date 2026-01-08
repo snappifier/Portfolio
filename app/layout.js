@@ -23,9 +23,16 @@ const poppins = Poppins({
 
 export const metadata = {
 	metadataBase: new URL("https://krystianmatwiej.pl"),
-  title: "Krystian Matwiej - Frontend Developer | React & Next.js",
-  description: "Frontend Developer from Poland specializing in React, Next.js and Motion.dev animations. Building modern, performant, high quality websites.",
+  	title: "Krystian Matwiej - Frontend Developer | React & Next.js",
+  	description: "Frontend Developer from Poland specializing in React, Next.js and Motion.dev animations. Building modern, performant, high quality websites.",
 	authors: [{name: "Krystian Matwiej", url: "https://krystianmatwiej.pl"}],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			'max-image-preview': 'none'
+		}
+	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",
